@@ -283,23 +283,13 @@
 
         // سكريبت ارسال الطلب عبر الواتساب
         function sendWhatsApp(button) {
-                // نحصل على العنصر الأب (كرت المنتج)
-                var productCard = button.closest('.product-card');
-
-                // نحصل على اسم المنتج من العنوان (h3)
-                var productName = productCard.querySelector('h3').innerText;
-
-                // نجهز الرسالة
-                var message = `مرحباً، أود طلب المنتج التالي: ${productName}`;
-
-                // رقم الواتساب (ضع هنا رقمك مع رمز الدولة بدون علامات +)
-                var phoneNumber = "201225406810"; // مثال: 20 لمصر
-
-                // بناء رابط واتساب مع الرسالة
-                var url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-                // فتح الرابط في نافذة جديدة
-                window.open(url, '_blank');
+            const card = button.closest('.product-card');
+            const title = card.querySelector('h3').innerText;
+            const image = card.querySelector('img').src;
+            const message = `مرحباً، أرغب في طلب المنتج التالي:\n\n*${title}*\nرابط الصورة: ${image}`;
+            const phoneNumber = "201225406810"; 
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
         }
     </script>
 
