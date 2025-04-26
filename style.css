@@ -123,9 +123,7 @@ header { background-color: #3e3e3e; position: sticky; top: 0; z-index: 999; box-
 
 /* Responsive: Show hamburger on small screens */
 @media (max-width: 768px) {
-  .main-nav {
-    display: none;
-  }
+  
   .menu-toggle {
     display: block;
   }

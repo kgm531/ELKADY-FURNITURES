@@ -18,30 +18,38 @@
 
         .hero {
             background: linear-gradient(rgba(62, 62, 62, 0.6), rgba(62, 62, 62, 0.6)),
-                url('https://plus.unsplash.com/premium_photo-1689609949921-6b2529511e38?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
-             height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #f7c35f;
-      text-align: center;
-      font-size: 36px;
-      font-weight: bold;
-      overflow: hidden;
-      position: relative;
-    }
+                url('https://plus.unsplash.com/premium_photo-1678752717095-08cd0bd1d7e7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f7c35f;
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            overflow: hidden;
+            position: relative;
+        }
 
-    .hero span {
-      border-right: 2px solid #f7c35f;
-      padding-right: 5px;
-      animation: blink 0.7s infinite;
-    }
+        .hero span {
+            border-right: 2px solid #f7c35f;
+            padding-right: 5px;
+            animation: blink 0.7s infinite;
+        }
 
-    @keyframes blink {
-      0% { border-color: #f7c35f; }
-      50% { border-color: transparent; }
-      100% { border-color: #f7c35f; }
-    }
+        @keyframes blink {
+            0% {
+                border-color: #f7c35f;
+            }
+
+            50% {
+                border-color: transparent;
+            }
+
+            100% {
+                border-color: #f7c35f;
+            }
+        }
 
         .products-section {
             max-width: 1200px;
@@ -104,12 +112,55 @@
             color: #3e3e3e;
         }
 
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            margin: 15px;
+            padding: 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1ebe5d;
+        }
+
         footer {
             background-color: #3e3e3e;
             color: #f7c35f;
             text-align: center;
             padding: 15px 0;
             margin-top: 40px;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #3e3e3e;
+        }
+
+        .logo {
+            color: #f7c35f;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .main-nav a {
+            color: #f7c35f;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        .main-nav a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -125,17 +176,16 @@
                 <a href="about.html">من نحن</a>
                 <a href="contact.html">تواصل معنا</a>
             </nav>
-            
         </div>
     </header>
 
     <div class="hero" data-aos="fade-down">
-        <span id="typing"></span>
+        <span id="typing">منتجاتنا</span>
     </div>
 
     <section class="products-section">
 
-        <!-- فلترة الفئات -->
+        <!-- أزرار الفلترة -->
         <div class="filter-buttons">
             <button class="filter-btn active" data-category="all">الكل</button>
             <button class="filter-btn" data-category="كراسي">كراسي</button>
@@ -148,26 +198,57 @@
             <button class="filter-btn" data-category="طاولات-قهوة">طاولات قهوة</button>
         </div>
 
-        <!-- شبكة المنتجات -->
+        <!-- المنتجات -->
         <div class="products-grid">
 
-            <!-- منتج -->
-            <a href="product-details.html" class="product-card" data-category="كراسي" data-aos="zoom-in">
-                <img src="https://via.placeholder.com/400x250?text=كرسي" alt="كرسي">
+            <div class="product-card" data-category="كراسي" data-aos="zoom-in">
+                <img src="https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="كرسي">
                 <h3>كرسي خشبي أنيق</h3>
-            </a>
+                <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+            </div>
 
-            <a href="product-details.html" class="product-card" data-category="جزامات" data-aos="zoom-in">
+            <div class="product-card" data-category="جزامات" data-aos="zoom-in">
                 <img src="https://via.placeholder.com/400x250?text=جزامة" alt="جزامة">
                 <h3>جزامة بتصميم مودرن</h3>
-            </a>
+                <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+            </div>
 
-            <a href="product-details.html" class="product-card" data-category="مرايات" data-aos="zoom-in">
+            <div class="product-card" data-category="مرايات" data-aos="zoom-in">
                 <img src="https://via.placeholder.com/400x250?text=مرآة" alt="مرآة">
                 <h3>مرآة جدارية فاخرة</h3>
-            </a>
+                <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+            </div>
 
-            <!-- يمكنك إضافة المزيد بنفس الطريقة -->
+            <div class="product-card" data-category="ترابيزات" data-aos="zoom-in">
+                <img src="https://via.placeholder.com/400x250?text=ترابيزة" alt="ترابيزة">
+                <h3>ترابيزة طعام خشبية</h3>
+                <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+            </div>
+
+            <div class="product-card" data-category="دواليب" data-aos="zoom-in">
+                <img src="https://via.placeholder.com/400x250?text=دولاب" alt="دولاب">
+                <h3>دولاب تخزين فاخر</h3>
+                <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+            </div>
+
+            <div class="product-card" data-category="وحدات-تليفزيون" data-aos="zoom-in">
+                <img src="https://via.placeholder.com/400x250?text=وحدة+تليفزيون" alt="وحدة تليفزيون">
+                <h3>وحدة تليفزيون مودرن</h3>
+                <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+            </div>
+
+            <div class="product-card" data-category="عربات-مطبخ" data-aos="zoom-in">
+                <img src="https://via.placeholder.com/400x250?text=عربة+مطبخ" alt="عربة مطبخ">
+                <h3>عربة مطبخ متحركة</h3>
+                <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+            </div>
+
+            <div class="product-card" data-category="طاولات-قهوة" data-aos="zoom-in">
+                <img src="https://via.placeholder.com/400x250?text=طاولة+قهوة" alt="طاولة قهوة">
+                <h3>طاولة قهوة عصرية</h3>
+                <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+            </div>
 
         </div>
     </section>
@@ -180,6 +261,7 @@
     <script>
         AOS.init({ duration: 1000, once: true });
 
+        // سكريبت الفلترة
         const filterButtons = document.querySelectorAll('.filter-btn');
         const products = document.querySelectorAll('.product-card');
 
@@ -198,44 +280,27 @@
                 });
             });
         });
-         
 
+        // سكريبت ارسال الطلب عبر الواتساب
+        function sendWhatsApp(button) {
+                // نحصل على العنصر الأب (كرت المنتج)
+                var productCard = button.closest('.product-card');
 
-            // كود الكتابة المتكرر
-            const phrases = ["المنتجات", "ELKADY FURNITURES"];
-            let phraseIndex = 0;
-            let letterIndex = 0;
-            const typingSpeed = 150;  // سرعة الكتابة
-            const erasingSpeed = 80;  // سرعة المسح
-            const delayBetweenPhrases = 1200; // تأخير قبل تغيير الجملة
+                // نحصل على اسم المنتج من العنوان (h3)
+                var productName = productCard.querySelector('h3').innerText;
 
-            const typingElement = document.getElementById("typing");
+                // نجهز الرسالة
+                var message = `مرحباً، أود طلب المنتج التالي: ${productName}`;
 
-            function type() {
-                if (letterIndex < phrases[phraseIndex].length) {
-                    typingElement.innerHTML += phrases[phraseIndex].charAt(letterIndex);
-                    letterIndex++;
-                    setTimeout(type, typingSpeed);
-                } else {
-                    setTimeout(erase, delayBetweenPhrases);
-                }
-            }
+                // رقم الواتساب (ضع هنا رقمك مع رمز الدولة بدون علامات +)
+                var phoneNumber = "201225406810"; // مثال: 20 لمصر
 
-            function erase() {
-                if (letterIndex > 0) {
-                    typingElement.innerHTML = phrases[phraseIndex].substring(0, letterIndex - 1);
-                    letterIndex--;
-                    setTimeout(erase, erasingSpeed);
-                } else {
-                    phraseIndex++;
-                    if (phraseIndex >= phrases.length) phraseIndex = 0;
-                    setTimeout(type, typingSpeed);
-                }
-            }
+                // بناء رابط واتساب مع الرسالة
+                var url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-            window.onload = function () {
-                setTimeout(type, typingSpeed);
-            };
+                // فتح الرابط في نافذة جديدة
+                window.open(url, '_blank');
+        }
     </script>
 
 </body>
