@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>تواصل معنا - [اسم الشركة]</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cairo', sans-serif;
+            background-color: #f7f7f7;
+            color: #3e3e3e;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(62, 62, 62, 0.6), rgba(62, 62, 62, 0.6)),
+                url('https://plus.unsplash.com/premium_photo-1689609949921-6b2529511e38?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+             height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #f7c35f;
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero span {
+      border-right: 2px solid #f7c35f;
+      padding-right: 5px;
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      0% { border-color: #f7c35f; }
+      50% { border-color: transparent; }
+      100% { border-color: #f7c35f; }
+    }
+
+        .contact-section {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-info h2 {
+            color: #3e3e3e;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .contact-info p {
+            margin: 8px 0;
+            font-size: 18px;
+        }
+
+        .contact-info p i {
+            color: #f7c35f;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input,
+        textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #f7c35f;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        button {
+            background-color: #f7c35f;
+            color: #3e3e3e;
+            border: none;
+            padding: 14px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e0aa4e;
+        }
+
+        footer {
+            background-color: #3e3e3e;
+            color: #f7c35f;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+        }
+
+        /* Social media links */
+        .social-icons-footer {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icons-footer a {
+            color: #f7c35f;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .social-icons-footer a:hover {
+            color: #e0aa4e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container header-flex">
+            <div class="logo">ELKADY FURNITURES</div>
+            <nav class="main-nav">
+                <a href="index.html">الرئيسية</a>
+                <a href="Product.html">المنتجات</a>
+                <a href="about.html">من نحن</a>
+                <a href="contact.html">تواصل معنا</a>
+            </nav>
+            <div class="menu-container">
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <h5>القائمة</h5>
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h3></h3>
+                <ul class="dropdown" id="dropdownMenu">
+                    <li><a href="#tables">الترابيزات</a></li>
+                    <li><a href="#closets">الدواليب</a></li>
+                    <li><a href="#mirrors">المرايات</a></li>
+                    <li><a href="#shoe">الجزامات</a></li>
+                    <li><a href="#chairs">الكراسي</a></li>
+                    <li><a href="#tvunits">وحدات تليفزيون</a></li>
+                    <li><a href="#kitchencar"> عربات مطبخ</a></li>
+                    <li><a href="#coffetables">طاولات قهوة</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero" data-aos="fade-down">
+        <span id="typing"></span>
+    </div>
+
+    <section class="contact-section" data-aos="fade-up">
+        <div class="contact-info">
+            <h2>معلومات التواصل</h2>
+            <p>📞 هاتف: +123456789</p>
+            <p>✉️ بريد إلكتروني: info@example.com</p>
+            <p>📍 العنوان: شارع الأثاث، المدينة، الدولة</p>
+        </div>
+
+        <form>
+            <input type="text" name="name" placeholder="الاسم الكامل" required>
+            <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+            <textarea name="message" placeholder="اكتب رسالتك هنا..." required></textarea>
+            <button type="submit">إرسال الرسالة</button>
+        </form>
+    </section>
+
+    <section class="extra-section" id="contact">
+        <h3>تواصل معنا</h3>
+        <p>📞 01012345678 | 01098765432</p>
+        <div class="social-icons-footer">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 ELKADY FURNITURES - جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+                duration: 1200, // مدة الحركة بالمللي ثانية
+            });
+
+
+            // كود الكتابة المتكرر
+            const phrases = ["تواصل معنا", "ELKADY FURNITURES"];
+            let phraseIndex = 0;
+            let letterIndex = 0;
+            const typingSpeed = 150;  // سرعة الكتابة
+            const erasingSpeed = 80;  // سرعة المسح
+            const delayBetweenPhrases = 1200; // تأخير قبل تغيير الجملة
+
+            const typingElement = document.getElementById("typing");
+
+            function type() {
+                if (letterIndex < phrases[phraseIndex].length) {
+                    typingElement.innerHTML += phrases[phraseIndex].charAt(letterIndex);
+                    letterIndex++;
+                    setTimeout(type, typingSpeed);
+                } else {
+                    setTimeout(erase, delayBetweenPhrases);
+                }
+            }
+
+            function erase() {
+                if (letterIndex > 0) {
+                    typingElement.innerHTML = phrases[phraseIndex].substring(0, letterIndex - 1);
+                    letterIndex--;
+                    setTimeout(erase, erasingSpeed);
+                } else {
+                    phraseIndex++;
+                    if (phraseIndex >= phrases.length) phraseIndex = 0;
+                    setTimeout(type, typingSpeed);
+                }
+            }
+
+            window.onload = function () {
+                setTimeout(type, typingSpeed);
+            };
+    </script>
+
+</body>
+
+</html>
