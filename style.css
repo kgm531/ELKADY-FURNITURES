@@ -29,9 +29,19 @@ header {
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #f7c35f;
+  display: flex;
+  justify-content: center;
+  /* لتوسيط الصورة */
+  align-items: center;
+  height: 80px;
+  /* تحديد الارتفاع المناسب للوجو */
+}
+
+.logo img {
+  height: 100%;
+  /* تأكد من أن الصورة تأخذ ارتفاع اللوجو المحدد */
+  width: auto;
+  /* الحفاظ على النسبة الأصلية للصورة */
 }
 
 /* Main Navigation */
