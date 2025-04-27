@@ -9,159 +9,207 @@
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            font-family: 'Cairo', sans-serif;
-            background-color: #f7f7f7;
-            color: #3e3e3e;
-        }
+      body {
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    background-color: #f7f7f7;
+    color: #3e3e3e;
+}
 
-        .hero {
-            background: linear-gradient(rgba(62, 62, 62, 0.6), rgba(62, 62, 62, 0.6)),
-                url('https://plus.unsplash.com/premium_photo-1678752717095-08cd0bd1d7e7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #f7c35f;
-            text-align: center;
-            font-size: 36px;
-            font-weight: bold;
-            overflow: hidden;
-            position: relative;
-        }
+.hero {
+    background: linear-gradient(rgba(62, 62, 62, 0.6), rgba(62, 62, 62, 0.6)),
+        url('https://plus.unsplash.com/premium_photo-1678752717095-08cd0bd1d7e7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f7c35f;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+}
 
-        .hero span {
-            border-right: 2px solid #f7c35f;
-            padding-right: 5px;
-            animation: blink 0.7s infinite;
-        }
+.hero span {
+    border-right: 2px solid #f7c35f;
+    padding-right: 5px;
+    animation: blink 0.7s infinite;
+}
 
-        @keyframes blink {
-            0% {
-                border-color: #f7c35f;
-            }
+@keyframes blink {
+    0% {
+        border-color: #f7c35f;
+    }
+    50% {
+        border-color: transparent;
+    }
+    100% {
+        border-color: #f7c35f;
+    }
+}
 
-            50% {
-                border-color: transparent;
-            }
+/* تحسين الأزرار */
+.filter-buttons {
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-            100% {
-                border-color: #f7c35f;
-            }
-        }
+.filter-buttons button {
+    background-color: #3e3e3e;
+    color: #f7c35f;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-        .products-section {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
-        }
+.filter-buttons button:hover,
+.filter-buttons button.active {
+    background-color: #f7c35f;
+    color: #3e3e3e;
+    transform: scale(1.05);
+}
 
-        .filter-buttons {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+/* تنسيق القسم الخاص بالمنتجات */
+.products-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
 
-        .filter-buttons button {
-            background-color: #3e3e3e;
-            color: #f7c35f;
-            border: none;
-            padding: 10px 20px;
-            margin: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 25px;
-            transition: background-color 0.3s;
-        }
+/* تنسيق العنوان */
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin: 10px 0;
+}
 
-        .filter-buttons button:hover,
-        .filter-buttons button.active {
-            background-color: #f7c35f;
-            color: #3e3e3e;
-        }
+/* تنسيق الخط الأفقي بين الأقسام */
+hr {
+    border: 1px solid #ccc;
+    width: 80%;
+    margin: 10px 0;
+}
 
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+/* تنسيق المنتجات */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
 
-        .product-card {
-            background: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            text-align: center;
-            cursor: pointer;
-        }
+/* تنسيق البطاقة الخاصة بكل منتج */
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 250px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
 
-        .product-card:hover {
-            transform: translateY(-10px);
-        }
+/* تأثير عند مرور الفأرة على المنتج */
+.product-card:hover {
+    transform: scale(1.05);
+}
 
-        .product-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
+/* تنسيق الصورة داخل المنتج */
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
 
-        .product-card h3 {
-            font-size: 20px;
-            margin: 15px 0;
-            color: #3e3e3e;
-        }
+/* تنسيق العنوان داخل المنتج */
+.product-card h4 {
+    font-size: 18px;
+    color: #333;
+    margin: 15px 0;
+}
 
-        .whatsapp-btn {
-            background-color: #25D366;
-            color: white;
-            border: none;
-            margin: 15px;
-            padding: 10px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
+/* تنسيق الوصف داخل المنتج */
+.product-card p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
 
-        .whatsapp-btn:hover {
-            background-color: #1ebe5d;
-        }
+/* تنسيق السعر */
+.product-card span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 15px;
+}
 
-        footer {
-            background-color: #3e3e3e;
-            color: #f7c35f;
-            text-align: center;
-            padding: 15px 0;
-            margin-top: 40px;
-        }
+/* تنسيق زر واتساب */
+.whatsapp-btn {
+    display: inline-block;
+    background-color: #25d366;
+    color: white;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
 
-        .header-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #3e3e3e;
-        }
+/* تغيير لون زر واتساب عند مرور الفأرة */
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+}
 
-        .logo {
-            color: #f7c35f;
-            font-size: 24px;
-            font-weight: bold;
-        }
+/* تنسيق لأجهزة الجوال */
+@media screen and (max-width: 768px) {
+    .products {
+        flex-direction: column;
+        align-items: center;
+    }
 
-        .main-nav a {
-            color: #f7c35f;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 18px;
-        }
+    .product-card {
+        width: 90%;
+    }
 
-        .main-nav a:hover {
-            text-decoration: underline;
-        }
+    .section-title {
+        font-size: 20px;
+    }
+
+    .whatsapp-btn {
+        padding: 8px 16px;
+    }
+}
+
+/* تنسيق الفوتر */
+footer {
+    background-color: #3e3e3e;
+    color: #f7c35f;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    font-size: 1em;
+}
+
+footer a {
+    color: #f7c35f;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
     </style>
 </head>
 
@@ -180,7 +228,7 @@
     </header>
 
     <div class="hero" data-aos="fade-down">
-        <span id="typing">منتجاتنا</span>
+        <span id="typing"></span>
     </div>
 
     <section class="products-section">
@@ -201,36 +249,460 @@
         <!-- المنتجات -->
         <div class="products-grid">
 
+        <section class="products">
             <div class="product-card" data-category="كراسي" data-aos="zoom-in">
-                <img src="https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="كرسي">
-                <h3>كرسي خشبي أنيق</h3>
+                <img src="img/ترابيزات وكراسي1.jpg" alt="كرسي 1">
+                <h4>كرسي جلد فاخر</h4>
+                <p>مريح وأنيق لغرفة المعيشة</p>
+                <span>1200 ج.م</span>
                 <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
             </div>
+        
+            <div class="product-card" data-category="كراسي" data-aos="zoom-in">
+                <img src="img/ترابيزات وكراسي2.webp" alt="كرسي 2">
+                <h4>كرسي خشب مودرن</h4>
+                <p>تصميم عصري بجودة عالية</p>
+                <span>950 ج.م</span>
+                <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+            </div>
+        
+            <div class="product-card" data-category="كراسي" data-aos="zoom-in">
+                <img src="img/ترابيزات وكراسي3.webp" alt="كرسي 3">
+                <h4>كرسي خشب مودرن</h4>
+                <p>تصميم عصري بجودة عالية</p>
+                <span>950 ج.م</span>
+                <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+            </div>
+        
+            <div class="product-card" data-category="كراسي" data-aos="zoom-in">
+                <img src="img/ترابيزات وكراسي4.webp" alt="كرسي 4">
+                <h4>كرسي خشب مودرن</h4>
+                <p>تصميم عصري بجودة عالية</p>
+                <span>950 ج.م</span>
+                <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+            </div>
+        
+            <div class="product-card" data-category="كراسي" data-aos="zoom-in">
+                <img src="img/ترابيزات وكراسي5.webp" alt="كرسي 5">
+                <h4>كرسي خشب مودرن</h4>
+                <p>تصميم عصري بجودة عالية</p>
+                <span>950 ج.م</span>
+                <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+            </div>
+        
+            <div class="product-card" data-category="كراسي" data-aos="zoom-in">
+                <img src="img/ترابيزات وكراسي6.webp" alt="كرسي 6">
+                <h4>كرسي خشب مودرن</h4>
+                <p>تصميم عصري بجودة عالية</p>
+                <span>950 ج.م</span>
+                <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+            </div>
+        
+            <div class="product-card" data-category="كراسي" data-aos="zoom-in">
+                <img src="img/ترابيزات وكراسي7.webp" alt="كرسي 7">
+                <h4>كرسي خشب مودرن</h4>
+                <p>تصميم عصري بجودة عالية</p>
+                <span>950 ج.م</span>
+                <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+            </div>
+        
+            <div class="product-card" data-category="كراسي" data-aos="zoom-in">
+                <img src="img/ترابيززات وكراسي8.webp" alt="كرسي 8">
+                <h4>كرسي خشب مودرن</h4>
+                <p>تصميم عصري بجودة عالية</p>
+                <span>950 ج.م</span>
+                <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+            </div>
+        </section>
 
-            <div class="product-card" data-category="جزامات" data-aos="zoom-in">
-                <img src="https://via.placeholder.com/400x250?text=جزامة" alt="جزامة">
-                <h3>جزامة بتصميم مودرن</h3>
-                <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
-            </div>
 
-            <div class="product-card" data-category="مرايات" data-aos="zoom-in">
-                <img src="https://via.placeholder.com/400x250?text=مرآة" alt="مرآة">
-                <h3>مرآة جدارية فاخرة</h3>
-                <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
-            </div>
+            <!-- ترابيزات وكراسي -->
+            <section class="products-section">
+                <h2 class="section-title">ترابيزات وكراسي</h2>
+                <br>
+                <hr>
+                <br>
+                <div class="products">
+                    <div class="product-card" data-category="ترابيزات" data-aos="zoom-in">
+                        <img src="img/ترابيزات وكراسي1.jpg" alt="كرسي 1">
+                        <h4>كرسي جلد فاخر</h4>
+                        <p>مريح وأنيق لغرفة المعيشة</p>
+                        <span>1200 ج.م</span>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                    </div>
+                    <div class="product-card" data-category="ترابيزات" data-aos="zoom-in">
+                        <img src="img/ترابيزات وكراسي2.webp" alt="كرسي خشب مودرن">
+                        <h4>كرسي خشب مودرن</h4>
+                        <p>تصميم عصري بجودة عالية</p>
+                        <span>950 ج.م</span>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                    </div>
+                    <div class="product-card" data-category="ترابيزات" data-aos="zoom-in">
+                        <img src="img/ترابيزات وكراسي3.webp" alt="كرسي خشب مودرن">
+                        <h4>كرسي خشب مودرن</h4>
+                        <p>تصميم عصري بجودة عالية</p>
+                        <span>950 ج.م</span>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                    </div>
+                    <div class="product-card" data-category="ترابيزات" data-aos="zoom-in">
+                        <img src="img/ترابيزات وكراسي4.webp" alt="كرسي خشب مودرن">
+                        <h4>كرسي خشب مودرن</h4>
+                        <p>تصميم عصري بجودة عالية</p>
+                        <span>950 ج.م</span>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                    </div>
+                    <div class="product-card" data-category="ترابيزات" data-aos="zoom-in">
+                        <img src="img/ترابيزات وكراسي5.webp" alt="كرسي خشب مودرن">
+                        <h4>كرسي خشب مودرن</h4>
+                        <p>تصميم عصري بجودة عالية</p>
+                        <span>950 ج.م</span>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                    </div>
+                    <div class="product-card" data-category="ترابيزات" data-aos="zoom-in">
+                        <img src="img/ترابيزات وكراسي6.webp" alt="كرسي خشب مودرن">
+                        <h4>كرسي خشب مودرن</h4>
+                        <p>تصميم عصري بجودة عالية</p>
+                        <span>950 ج.م</span>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                    </div>
+                    <div class="product-card" data-category="ترابيزات" data-aos="zoom-in">
+                        <img src="img/ترابيزات وكراسي7.webp" alt="كرسي خشب مودرن">
+                        <h4>كرسي خشب مودرن</h4>
+                        <p>تصميم عصري بجودة عالية</p>
+                        <span>950 ج.م</span>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                    </div>
+                    <div class="product-card" data-category="ترابيزات" data-aos="zoom-in">
+                        <img src="img/ترابيزات وكراسي8.webp" alt="كرسي خشب مودرن">
+                        <h4>كرسي خشب مودرن</h4>
+                        <p>تصميم عصري بجودة عالية</p>
+                        <span>950 ج.م</span>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- جزامات ومقاعد تخزين -->
+            <section class="products-section">
+                <h2 class="section-title">جزامات ومقاعد تخزين</h2>
+                <br>
+                <hr>
+                <br>
+                <div class="products">
+                    <div class="product-card" data-category="جزامات" data-aos="zoom-in">
+                        <img src="img/جزامات ومقاعد تخزين1.webp" alt="جزامة مودرن">
+                        <h4>جزامة مودرن</h4>
+                        <p>بتصميم عملي وأنيق</p>
+                        <span>1450 ج.م</span>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                    </div>
+                    <div class="product-card" data-category="جزامات" data-aos="zoom-in">
+                        <img src="img/جزامات ومقاعد تخزين2.webp" alt="جزامة مودرن">
+                        <h4>جزامة مودرن</h4>
+                        <p>بتصميم عملي وأنيق</p>
+                        <span>1450 ج.م</span>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                    </div>
+                    <div class="product-card" data-category="جزامات" data-aos="zoom-in">
+                        <img src="img/جزامات ومقاعد تخزين3.webp" alt="جزامة مودرن">
+                        <h4>جزامة مودرن</h4>
+                        <p>بتصميم عملي وأنيق</p>
+                        <span>1450 ج.م</span>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                    </div>
+                    <div class="product-card" data-category="جزامات" data-aos="zoom-in">
+                        <img src="img/جزامات ومقاعد تخزين4.webp" alt="جزامة مودرن">
+                        <h4>جزامة مودرن</h4>
+                        <p>بتصميم عملي وأنيق</p>
+                        <span>1450 ج.م</span>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                    </div>
+                    <div class="product-card" data-category="جزامات" data-aos="zoom-in">
+                        <img src="img/جزامات ومقاعد تخزين5.webp" alt="جزامة مودرن">
+                        <h4>جزامة مودرن</h4>
+                        <p>بتصميم عملي وأنيق</p>
+                        <span>1450 ج.م</span>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                    </div>
+                    <div class="product-card" data-category="جزامات" data-aos="zoom-in">
+                        <img src="img/جزامات ومقاعد تخزين6.webp" alt="جزامة مودرن">
+                        <h4>جزامة مودرن</h4>
+                        <p>بتصميم عملي وأنيق</p>
+                        <span>1450 ج.م</span>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                    </div>
+                    <div class="product-card" data-category="جزامات" data-aos="zoom-in">
+                        <img src="img/جزامات ومقاعد تخزين7.webp" alt="جزامة مودرن">
+                        <h4>جزامة مودرن</h4>
+                        <p>بتصميم عملي وأنيق</p>
+                        <span>1450 ج.م</span>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                    </div>
+                    <div class="product-card" data-category="جزامات" data-aos="zoom-in">
+                        <img src="img/جزامات ومقاعد تخزين8.webp" alt="جزامة مودرن">
+                        <h4>جزامة مودرن</h4>
+                        <p>بتصميم عملي وأنيق</p>
+                        <span>1450 ج.م</span>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                    </div>
+                    <div class="product-card" data-category="جزامات" data-aos="zoom-in">
+                        <img src="img/جزامات ومقاعد تخزين9.webp" alt="جزامة مودرن">
+                        <h4>جزامة مودرن</h4>
+                        <p>بتصميم عملي وأنيق</p>
+                        <span>1450 ج.م</span>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                    </div>
+                    <div class="product-card" data-category="جزامات" data-aos="zoom-in">
+                        <img src="img/جزامات ومقاعد تخزين10.webp" alt="جزامة مودرن">
+                        <h4>جزامة مودرن</h4>
+                        <p>بتصميم عملي وأنيق</p>
+                        <span>1450 ج.م</span>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                    </div>
+                </div>
+            </section>
 
-            <div class="product-card" data-category="ترابيزات" data-aos="zoom-in">
-                <img src="https://via.placeholder.com/400x250?text=ترابيزة" alt="ترابيزة">
-                <h3>ترابيزة طعام خشبية</h3>
-                <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
-            </div>
 
-            <div class="product-card" data-category="دواليب" data-aos="zoom-in">
-                <img src="https://via.placeholder.com/400x250?text=دولاب" alt="دولاب">
-                <h3>دولاب تخزين فاخر</h3>
-                <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        <!-- المرايات -->
+        <section class="products-section">
+            <h2 class="section-title">المرايات ووحدات التخزين</h2>
+            <br>
+            <hr>
+            <br>
+            <div class="products">
+                <div class="product-card" data-category="مرايات" data-aos="zoom-in">
+                    <img src="img/مرايات وحدات تخزين1.webp" alt="مرآة">
+                    <h4>مرآة جدارية بإطار ذهبي</h4>
+                    <p>لمسة فخامة لديكورك</p>
+                    <span>950 ج.م</span>
+                    <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                </div>
+                <div class="product-card" data-category="مرايات" data-aos="zoom-in">
+                    <img src="img/مرايات وحدات تخزين2.webp" alt="مرآة">
+                    <h4>مرآة جدارية بإطار ذهبي</h4>
+                    <p>لمسة فخامة لديكورك</p>
+                    <span>950 ج.م</span>
+                    <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                </div>
+                <div class="product-card" data-category="مرايات" data-aos="zoom-in">
+                    <img src="img/مرايات وحدات تخزين3.webp" alt="مرآة">
+                    <h4>مرآة جدارية بإطار ذهبي</h4>
+                    <p>لمسة فخامة لديكورك</p>
+                    <span>950 ج.م</span>
+                    <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                </div>
+                <div class="product-card" data-category="مرايات" data-aos="zoom-in">
+                    <img src="img/مرايات وحدات تخزين4.webp" alt="مرآة">
+                    <h4>مرآة جدارية بإطار ذهبي</h4>
+                    <p>لمسة فخامة لديكورك</p>
+                    <span>950 ج.م</span>
+                    <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                </div>
+                <div class="product-card" data-category="مرايات" data-aos="zoom-in">
+                    <img src="img/مرايات وحدات تخزين5.webp" alt="مرآة">
+                    <h4>مرآة جدارية بإطار ذهبي</h4>
+                    <p>لمسة فخامة لديكورك</p>
+                    <span>950 ج.م</span>
+                    <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                </div>
+                <div class="product-card" data-category="مرايات" data-aos="zoom-in">
+                    <img src="img/مرايات وحدات تخزين6.webp" alt="مرآة">
+                    <h4>مرآة جدارية بإطار ذهبي</h4>
+                    <p>لمسة فخامة لديكورك</p>
+                    <span>950 ج.م</span>
+                    <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                </div>
+                <div class="product-card" data-category="مرايات" data-aos="zoom-in">
+                    <img src="img/مرايات وحدات تخزين7.webp" alt="مرآة">
+                    <h4>مرآة جدارية بإطار ذهبي</h4>
+                    <p>لمسة فخامة لديكورك</p>
+                    <span>950 ج.م</span>
+                    <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                </div>
+                <div class="product-card" data-category="مرايات" data-aos="zoom-in">
+                    <img src="img/مرايات وحدات تخزين8.webp" alt="مرآة">
+                    <h4>مرآة جدارية بإطار ذهبي</h4>
+                    <p>لمسة فخامة لديكورك</p>
+                    <span>950 ج.م</span>
+                    <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                </div>
+                <div class="product-card" data-category="مرايات" data-aos="zoom-in">
+                    <img src="img/مرايات وحدات تخزين9.webp" alt="مرآة">
+                    <h4>مرآة جدارية بإطار ذهبي</h4>
+                    <p>لمسة فخامة لديكورك</p>
+                    <span>950 ج.م</span>
+                    <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                </div>
+                <div class="product-card" data-category="مرايات" data-aos="zoom-in">
+                    <img src="img/مرايات وحدات تخزين10.webp" alt="مرآة">
+                    <h4>مرآة جدارية بإطار ذهبي</h4>
+                    <p>لمسة فخامة لديكورك</p>
+                    <span>950 ج.م</span>
+                    <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+                </div>
             </div>
+        </section>
+
+<!-- ادواليب ودريسنج -->
+<section class="products-section">
+    <h2 class="section-title">الدواليب والدريسنجات</h2>
+    <br>
+    <hr>
+    <br>
+    <div class="products">
+        <div class="product-card" data-category="دواليب" data-aos="zoom-in">
+            <img src="img/دواليب ودريسنج1.jpg" alt="ترابيزة">
+            <h4>ترابيزة خشبية كلاسيك</h4>
+            <p>مثالية لغرف الطعام</p>
+            <span>2200 ج.م</span>
+            <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        </div>
+        <div class="product-card" data-category="دواليب" data-aos="zoom-in">
+            <img src="img/دواليب ودريسنج2.jpg" alt="ترابيزة">
+            <h4>ترابيزة خشبية كلاسيك</h4>
+            <p>مثالية لغرف الطعام</p>
+            <span>2200 ج.م</span>
+            <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        </div>
+        <div class="product-card" data-category="دواليب" data-aos="zoom-in">
+            <img src="img/دواليب ودريسنج3.jpg" alt="ترابيزة">
+            <h4>ترابيزة خشبية كلاسيك</h4>
+            <p>مثالية لغرف الطعام</p>
+            <span>2200 ج.م</span>
+            <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        </div>
+        <div class="product-card" data-category="دواليب" data-aos="zoom-in">
+            <img src="img/دواليب ودريسنج4.jpg" alt="ترابيزة">
+            <h4>ترابيزة خشبية كلاسيك</h4>
+            <p>مثالية لغرف الطعام</p>
+            <span>2200 ج.م</span>
+            <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        </div>
+        <div class="product-card" data-category="دواليب" data-aos="zoom-in">
+            <img src="img/دواليب ودريسنج5.jpg" alt="ترابيزة">
+            <h4>ترابيزة خشبية كلاسيك</h4>
+            <p>مثالية لغرف الطعام</p>
+            <span>2200 ج.م</span>
+            <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        </div>
+        <div class="product-card" data-category="دواليب" data-aos="zoom-in">
+            <img src="img/دواليب ودريسنج6.jpg" alt="ترابيزة">
+            <h4>ترابيزة خشبية كلاسيك</h4>
+            <p>مثالية لغرف الطعام</p>
+            <span>2200 ج.م</span>
+            <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        </div>
+        <div class="product-card" data-category="دواليب" data-aos="zoom-in">
+            <img src="img/دواليب ودريسنج7.jpg" alt="ترابيزة">
+            <h4>ترابيزة خشبية كلاسيك</h4>
+            <p>مثالية لغرف الطعام</p>
+            <span>2200 ج.م</span>
+            <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        </div>
+        <div class="product-card" data-category="دواليب" data-aos="zoom-in">
+            <img src="img/دواليب ودريسنج8.jpg" alt="ترابيزة">
+            <h4>ترابيزة خشبية كلاسيك</h4>
+            <p>مثالية لغرف الطعام</p>
+            <span>2200 ج.م</span>
+            <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        </div>
+        <div class="product-card" data-category="دواليب" data-aos="zoom-in">
+            <img src="img/دواليب ودريسنج9.jpg" alt="ترابيزة">
+            <h4>ترابيزة خشبية كلاسيك</h4>
+            <p>مثالية لغرف الطعام</p>
+            <span>2200 ج.م</span>
+            <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        </div>
+        <div class="product-card" data-category="دواليب" data-aos="zoom-in">
+            <img src="img/دواليب ودريسنج10.jpg" alt="ترابيزة">
+            <h4>ترابيزة خشبية كلاسيك</h4>
+            <p>مثالية لغرف الطعام</p>
+            <span>2200 ج.م</span>
+            <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        </div>
+    </div>
+</section>
+
+<!-- تسريحات ووحدات تخزين -->
+<section class="products-section">
+    <h2 class="section-title">تسريحات ووحدات تخزين</h2>
+    <br>
+    <hr>
+    <br>
+    <div class="products">
+        <div class="product-card" data-category="تسريحات" data-aos="zoom-in">
+            <img src="img/تسريحات1.webp" alt="دولاب">
+            <h4>دولاب تخزين خشبي</h4>
+            <p>مناسب لغرف النوم أو الأطفال</p>
+            <span>3300 ج.م</span>
+            <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        </div>
+        <div class="product-card" data-category="تسريحات" data-aos="zoom-in">
+            <img src="img/تسريحات2.webp" alt="دولاب">
+            <h4>دولاب تخزين خشبي</h4>
+            <p>مناسب لغرف النوم أو الأطفال</p>
+            <span>3300 ج.م</span>
+            <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        </div>
+        <div class="product-card" data-category="تسريحات" data-aos="zoom-in">
+            <img src="img/تسريحات3.webp" alt="دولاب">
+            <h4>دولاب تخزين خشبي</h4>
+            <p>مناسب لغرف النوم أو الأطفال</p>
+            <span>3300 ج.م</span>
+            <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        </div>
+        <div class="product-card" data-category="تسريحات" data-aos="zoom-in">
+            <img src="img/تسريحات4.webp" alt="دولاب">
+            <h4>دولاب تخزين خشبي</h4>
+            <p>مناسب لغرف النوم أو الأطفال</p>
+            <span>3300 ج.م</span>
+            <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        </div>
+        <div class="product-card" data-category="تسريحات" data-aos="zoom-in">
+            <img src="img/تسريحات5.webp" alt="دولاب">
+            <h4>دولاب تخزين خشبي</h4>
+            <p>مناسب لغرف النوم أو الأطفال</p>
+            <span>3300 ج.م</span>
+            <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        </div>
+        <div class="product-card" data-category="تسريحات" data-aos="zoom-in">
+            <img src="img/تسريحات6.webp" alt="دولاب">
+            <h4>دولاب تخزين خشبي</h4>
+            <p>مناسب لغرف النوم أو الأطفال</p>
+            <span>3300 ج.م</span>
+            <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        </div>
+        <div class="product-card" data-category="تسريحات" data-aos="zoom-in">
+            <img src="img/تسريحات7.webp" alt="دولاب">
+            <h4>دولاب تخزين خشبي</h4>
+            <p>مناسب لغرف النوم أو الأطفال</p>
+            <span>3300 ج.م</span>
+            <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        </div>
+        <div class="product-card" data-category="تسريحات" data-aos="zoom-in">
+            <img src="img/تسريحات8.webp" alt="دولاب">
+            <h4>دولاب تخزين خشبي</h4>
+            <p>مناسب لغرف النوم أو الأطفال</p>
+            <span>3300 ج.م</span>
+            <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        </div>
+        <div class="product-card" data-category="تسريحات" data-aos="zoom-in">
+            <img src="img/تسريحات9.webp" alt="دولاب">
+            <h4>دولاب تخزين خشبي</h4>
+            <p>مناسب لغرف النوم أو الأطفال</p>
+            <span>3300 ج.م</span>
+            <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        </div>
+        <div class="product-card" data-category="تسريحات" data-aos="zoom-in">
+            <img src="img/تسريحات10.webp" alt="دولاب">
+            <h4>دولاب تخزين خشبي</h4>
+            <p>مناسب لغرف النوم أو الأطفال</p>
+            <span>3300 ج.م</span>
+            <a href="#" class="whatsapp-btn" onclick="sendWhatsApp(this)">اطلب عبر واتساب</a>
+        </div>
+    </div>
+</section>
+
 
             <div class="product-card" data-category="وحدات-تليفزيون" data-aos="zoom-in">
                 <img src="https://via.placeholder.com/400x250?text=وحدة+تليفزيون" alt="وحدة تليفزيون">
@@ -259,7 +731,7 @@
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
+        AOS.init({ duration: 1200, once: true });
 
         // سكريبت الفلترة
         const filterButtons = document.querySelectorAll('.filter-btn');
@@ -291,6 +763,42 @@
             const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             window.open(url, '_blank');
         }
+
+         // كود الكتابة المتكرر
+            const phrases = ["المنتجات", "ELKADY FURNITURES"];
+            let phraseIndex = 0;
+            let letterIndex = 0;
+            const typingSpeed = 150;  // سرعة الكتابة
+            const erasingSpeed = 80;  // سرعة المسح
+            const delayBetweenPhrases = 1200; // تأخير قبل تغيير الجملة
+
+            const typingElement = document.getElementById("typing");
+
+            function type() {
+                if (letterIndex < phrases[phraseIndex].length) {
+                    typingElement.innerHTML += phrases[phraseIndex].charAt(letterIndex);
+                    letterIndex++;
+                    setTimeout(type, typingSpeed);
+                } else {
+                    setTimeout(erase, delayBetweenPhrases);
+                }
+            }
+
+            function erase() {
+                if (letterIndex > 0) {
+                    typingElement.innerHTML = phrases[phraseIndex].substring(0, letterIndex - 1);
+                    letterIndex--;
+                    setTimeout(erase, erasingSpeed);
+                } else {
+                    phraseIndex++;
+                    if (phraseIndex >= phrases.length) phraseIndex = 0;
+                    setTimeout(type, typingSpeed);
+                }
+            }
+
+            window.onload = function () {
+                setTimeout(type, typingSpeed);
+            };
     </script>
 
 </body>
