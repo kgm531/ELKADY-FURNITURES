@@ -10,28 +10,12 @@
 </head>
 <body>
 
-
-  <!--whatsapp icon-->
-<a href="https://wa.me/01212348798" class="whatsapp-float" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<!--scroll icon-->
-<!-- Scroll Up -->
-<button class="scroll-button scroll-up" onclick="scrollToTop()">
-  <i class="fas fa-arrow-up"></i>
-</button>
-
-<button class="scroll-button scroll-down" onclick="scrollToBottom()">
-  <i class="fas fa-arrow-down"></i>
-</button>
-
+  <!-- Header with Logo, Navbar and Hamburger Menu -->
   <header>
     <div class="container header-flex">
-      <div class="logo">
-        <img src="img/logo.png">
-      </div>
-      <nav class="main-nav">
+<div class="logo">
+  <img src="img/logo.png" alt="ELKADY FURNITURES" class="logo-image">
+</div>      <nav class="main-nav">
         <a href="index.html">الرئيسية</a>
         <a href="Product.html">المنتجات</a>
         <a href="about.html">من نحن</a>
@@ -44,10 +28,11 @@
         </button>
         <h3></h3>
         <ul class="dropdown"  id="dropdownMenu">
-          <li><a href="#tables">الترابيزات والكراسي</a></li>
+          <li><a href="#tables">الترابيزات</a></li>
           <li><a href="#closets">الدواليب</a></li>
           <li><a href="#mirrors">المرايات</a></li>
           <li><a href="#shoe">الجزامات</a></li>
+          <li><a href="#chairs">الكراسي</a></li>
           <li><a href="#tvunits">وحدات تليفزيون</a></li>
           <li><a href="#kitchencar"> عربات مطبخ</a></li>
           <li><a href="#coffetables">طاولات قهوة</a></li>
@@ -57,13 +42,106 @@
   </header>
 
   <!-- Hero Section -->
-  <div class="heros">
+  <div class="hero">
     <div class="overlay">
       <h1>تصاميم فاخرة تليق بذوقك</h1>
       <p>اختار من تشكيلتنا المميزة لأثاث المنزل</p>
     </div>
   </div>
+
+  <!-- Products Sections -->
+  <main id="products">
+
+    <!-- الكراسي -->
+    <section class="products-section">
+      <h2 class="section-title">الكراسي</h2>
   
+      <!-- صورة بنر كبيرة للقسم -->
+      <div class="section-banner">
+        <img src="img/كراسي تعديل.png" alt="قسم الكراسي">
+      </div>
+  
+      <!-- المنتجات -->
+      <div class="products">
+        <div class="product-card">
+          <img src="img/ترابيزة3.jpg" alt="كرسي 1">
+          <h4>كرسي جلد فاخر</h4>
+          <p>مريح وأنيق لغرفة المعيشة</p>
+          <span>1200 ج.م</span>
+        </div>
+        <div class="product-card">
+          <img src="img/ترابيزات وكراسي1.jpg" alt="كرسي 2">
+          <h4>كرسي خشب مودرن</h4>
+          <p>تصميم عصري بجودة عالية</p>
+          <span>950 ج.م</span>
+        </div>
+        <!-- كرر هذا البلوك لباقي المنتجات -->
+      </div>
+    </section>
+  
+  </main>
+  
+    <!-- الترابيزات -->
+    <section class="products-section">
+      <h2 class="section-title">الترابيزات</h2>
+      <div class="products">
+        <div class="product-card">
+          <img src="https://via.placeholder.com/250x180?text=ترابيزة" alt="ترابيزة">
+          <h4>ترابيزة خشبية كلاسيك</nabla>
+          <p>مثالية لغرف الطعام</p>
+          <span>2200 ج.م</span>
+        </div>
+      </div>
+    </section>
+    <!-- وحدات إضاءة -->
+    <section class="products-section">
+      <h2 class="section-title">وحدات إضاءة</h2>
+      <div class="products">
+        <div class="product-card">
+          <img src="https://via.placeholder.com/250x180?text=إضاءة" alt="إضاءة">
+          <h4>مصباح مودرن</h4>
+          <p>يضيف لمسة فنية للمكان</p>
+          <span>850 ج.م</span>
+        </div>
+      </div>
+    </section>
+    <!-- المرايات -->
+    <section class="products-section">
+      <h2 class="section-title">المرايات</h2>
+      <div class="products">
+        <div class="product-card">
+          <img src="https://via.placeholder.com/250x180?text=مرآة" alt="مرآة">
+          <h4>مرآة جدارية بإطار ذهبي</h4>
+          <p>لمسة فخامة لديكورك</p>
+          <span>950 ج.م</span>
+        </div>
+      </div>
+    </section>
+    <!-- الجزامات -->
+    <section class="products-section">
+      <h2 class="section-title">الجزامات</h2>
+      <div class="products">
+        <div class="product-card">
+          <img src="https://via.placeholder.com/250x180?text=جزامة" alt="جزامة">
+          <h4>جزامة مودرن</h4>
+          <p>بتصميم عملي وأنيق</p>
+          <span>1450 ج.م</span>
+        </div>
+      </div>
+    </section>
+    <!-- الدواليب -->
+    <section class="products-section">
+      <h2 class="section-title">الدواليب</h2>
+      <div class="products">
+        <div class="product-card">
+          <img src="https://via.placeholder.com/250x180?text=دولاب" alt="دولاب">
+          <h4>دولاب تخزين خشبي</h4>
+          <p>مناسب لغرف النوم أو الأطفال</p>
+          <span>3300 ج.م</span>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- About Section -->
   <section class="extra-section" id="about">
@@ -113,36 +191,21 @@
     </div>
   </section>
 
- <!-- Footer -->
- 
- <footer class="footer">
-  <div class="container7">
-    <div class="column">
-      <h3 id="contact-title">Contact Information</h3>
-      <p>📞 <span id="phone-text">Phone:</span> <a href="tel:01212348798">01212348798</a></p>
-      <p>📞 <span id="phone-text">Phone:</span> <a href="tel:01017102110">01017102110</a></p>
+  <!-- Contact Section -->
+  <section class="extra-section" id="contact">
+    <h3>تواصل معنا</h3>
+    <p>📞 01012345678 | 01098765432</p>
+    <div class="social-icons-footer">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
     </div>
-    <div class="column">
-      <h3 id="important-links">Important Links</h3>
-      <a href="#" id="privacy-policy">Privacy Policy</a>
-      <br>
-      <a href="#" id="terms-of-use">Terms of Use</a>
-    </div>
-    <div class="column social">
-      <h3 id="follow-us">Follow Us</h3>
-      <a href="https://www.facebook.com/share/16AodzZejo/"> <i class="fab fa-facebook-f"></i></a>
-      
-      
-      <br>
-      <a href="https://www.instagram.com/lafemme_woman?igsh=ejhuY3IybGpxanM4"> <i class="fab fa-instagram"></i></a>
-<br>
-<a href="https://www.tiktok.com/@osama.elbannan?_t=ZS-8uchrhB8KzY&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>      
-    </div>
-  </div>
-  <div class="copyright">
-    &copy; 2025 <span id="all-rights">All Rights Reserved</span> | <span id="kgm-marketing">KGM Marketing</span>
-  </div>
-</footer>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 ELKADY FURNITURES - جميع الحقوق محفوظة</p>
+  </footer>
 
   <!-- Slider Script -->
   <script>
@@ -165,15 +228,6 @@
     document.querySelector('.menu-toggle').addEventListener('click', function() {
       document.querySelector('.menu-container').classList.toggle('open');
     });
-
-    function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function scrollToBottom() {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-  }
-
 
    
   </script>
