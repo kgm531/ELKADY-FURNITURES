@@ -84,24 +84,20 @@ function sendOrderToWhatsApp() {
         return;
     }
 
-    let message = 'تفاصيل الطلب:\n\n';
+    let message = 'تفاصيل الطلب:\n';
 
-    // رابط موقعك الأساسي (غيره حسب الحاجة)
-    let baseUrl = 'https://kgm531.github.io/';
+    // إضافة أسماء المنتجات والصور والأسعار إلى الرسالة
+    message += `\n---\nالتفاصيل الكاملة للطلب:\n`;
 
-    cart.forEach((item, index) => {
-        message += `🛒 منتج رقم ${index + 1}\n`;
-        message += `${item.name}\n`;
-        message += `السعر: ${item.price} جنية\n`;
-        message += `صورة المنتج: ${baseUrl}${item.image}\n\n`;  // 🔥 لاحظ هنا دمج رابط الموقع
+    cart.forEach(item => {
+        message += `\n${item.name} - ${item.price} ريال\n`;
+        message += `صورة: ${window.location.origin}/${item.image}\n`;
     });
 
-    let totalPrice = cart.reduce((total, item) => total + item.price, 0);
-    message += `🧮 المجموع الكلي: ${totalPrice} جنية`;
+    // استبدل رقم الهاتف الخاص بك في الرابط
+    let phoneNumber = '201225406810'; // تأكد من إضافة الرقم مع رمز الدولة (مثل +20 للرقم المصري)
+    let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-    let phoneNumber = '201225406810';
-    let encodedMessage = encodeURIComponent(message);
-    let url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
+    // فتح الرابط لإرسال الرسالة عبر WhatsApp
     window.open(url, '_blank');
 }
