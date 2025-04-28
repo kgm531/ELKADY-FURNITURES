@@ -3,16 +3,9 @@ let cart = [];
 
 // دالة لإضافة منتج إلى العربة
 function addToCart(productName, productPrice, productImage) {
-    // إضافة المنتج إلى المصفوفة
     cart.push({ name: productName, price: productPrice, image: productImage });
-
-    // تحديث عداد العربة
     updateCartCount();
-
-    // تحديث محتويات العربة في النافذة المنبثقة
     updateCartItems();
-
-    // تحديث المجموع الإجمالي
     updateTotalPrice();
 }
 
@@ -25,13 +18,21 @@ function updateCartCount() {
 // دالة لتحديث محتويات العربة
 function updateCartItems() {
     let cartItemsList = document.getElementById('cart-items');
-    cartItemsList.innerHTML = ''; // مسح المحتوى القديم
+    cartItemsList.innerHTML = '';
 
     cart.forEach((item, index) => {
         let li = document.createElement('li');
+        li.style.display = 'flex';
+        li.style.alignItems = 'center';
+        li.style.marginBottom = '10px';
+
         li.innerHTML = `
-            ${item.name} - ${item.price} ريال
-            <span class="remove" onclick="removeFromCart(${index})">حذف</span>
+            <img src="${item.image}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: cover; margin-right: 10px; border-radius: 8px;">
+            <div style="flex: 1;">
+                <div><strong>${item.name}</strong></div>
+                <div>${item.price} جنيه</div>
+            </div>
+            <span class="remove" onclick="removeFromCart(${index})" style="color: red; cursor: pointer; margin-left: 10px;">🗑️</span>
         `;
         cartItemsList.appendChild(li);
     });
@@ -45,10 +46,7 @@ function updateTotalPrice() {
 
 // دالة لحذف منتج من العربة
 function removeFromCart(index) {
-    // حذف المنتج من المصفوفة
     cart.splice(index, 1);
-
-    // تحديث العربة
     updateCartCount();
     updateCartItems();
     updateTotalPrice();
@@ -72,8 +70,7 @@ function checkout() {
         alert('العربة فارغة');
     } else {
         alert('تم إتمام الطلب بنجاح');
-        // يمكن إضافة كود هنا للتواصل مع الخادم أو إرسال الطلب عبر WhatsApp
-        cart = []; // مسح العربة بعد إتمام الطلب
+        cart = [];
         updateCartCount();
         updateCartItems();
         updateTotalPrice();
@@ -87,20 +84,24 @@ function sendOrderToWhatsApp() {
         return;
     }
 
-    let message = 'تفاصيل الطلب:\n';
+    let message = 'تفاصيل الطلب:\n\n';
 
-    // إضافة أسماء المنتجات والصور والأسعار إلى الرسالة
-    message += `\n---\nالتفاصيل الكاملة للطلب:\n`;
-
-    cart.forEach(item => {
-        message += `\n${item.name} - ${item.price} ريال\n`;
-        message += `صورة: ${window.location.origin}/${item.image}\n`;
+    cart.forEach((item, index) => {
+        message += `🛒 منتج رقم ${index + 1}\n`;
+        message += `${item.name}\n`;
+        message += `السعر: ${item.price} جنية\n`;
+        message += `صورة المنتج: ${item.image}\n\n`;
     });
 
-    // استبدل رقم الهاتف الخاص بك في الرابط
-    let phoneNumber = '201225406810'; // تأكد من إضافة الرقم مع رمز الدولة (مثل +20 للرقم المصري)
-    let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    let totalPrice = cart.reduce((total, item) => total + item.price, 0);
+    message += `🧮 المجموع الكلي: ${totalPrice} جنية`;
 
-    // فتح الرابط لإرسال الرسالة عبر WhatsApp
+    let phoneNumber = '201225406810';
+    
+    // فقط ترميز نص الرسالة (وليس الروابط)
+    let encodedMessage = encodeURIComponent(message);
+    
+    let url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
     window.open(url, '_blank');
 }
