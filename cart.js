@@ -84,20 +84,27 @@ function sendOrderToWhatsApp() {
         return;
     }
 
-    let message = 'تفاصيل الطلب:\n';
+    let message = 'تفاصيل الطلب:\n\n';
 
-    // إضافة أسماء المنتجات والصور والأسعار إلى الرسالة
-    message += `\n---\nالتفاصيل الكاملة للطلب:\n`;
+    // رابط base للصور من GitHub raw
+    let baseUrl = 'https://raw.githubusercontent.com/kgm531/ELKADY-FURNITURES/main/';
 
-    cart.forEach(item => {
-        message += `\n${item.name} - ${item.price} ريال\n`;
-        message += `صورة: ${window.location.origin}/${item.image}\n`;
+    cart.forEach((item, index) => {
+        // تجهيز الرابط الكامل للصورة
+        let fullImageUrl = baseUrl + item.image.replace(/\\/g, '/');
+
+        message += `🛒 منتج رقم ${index + 1}\n`;
+        message += `${item.name}\n`;
+        message += `السعر: ${item.price} جنية\n`;
+        message += `صورة المنتج: ${fullImageUrl}\n\n`;
     });
 
-    // استبدل رقم الهاتف الخاص بك في الرابط
-    let phoneNumber = '201225406810'; // تأكد من إضافة الرقم مع رمز الدولة (مثل +20 للرقم المصري)
-    let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    let totalPrice = cart.reduce((total, item) => total + item.price, 0);
+    message += `🧮 المجموع الكلي: ${totalPrice} جنية`;
 
-    // فتح الرابط لإرسال الرسالة عبر WhatsApp
+    let phoneNumber = '201225406810';
+    let encodedMessage = encodeURIComponent(message);
+    let url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
     window.open(url, '_blank');
 }
