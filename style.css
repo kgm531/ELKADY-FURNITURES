@@ -138,33 +138,6 @@ header { background-color: #3e3e3e; position: sticky; top: 0; z-index: 999; box-
     display: block;
   }
 }
-.heros {
-  background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');
-  background-size: cover;
-  background-position: center;
-  height: 90vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.heros .overlay {
-  background: rgba(0,0,0,0.6);
-  padding: 40px;
-  color: #fff;
-  border-radius: 10px;
-}
-
-.heros h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-
-.heros p {
-  font-size: 20px;
-}
 
 /* العنوان */
 .section-title {
@@ -706,4 +679,353 @@ hr {
 
 .product-card img:hover {
   transform: scale(1.05);
+}
+
+
+/*---------------------------------------------------*/
+
+.heros {
+  background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.heros .overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.heros h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.heros p {
+  font-size: 20px;
+}
+
+.heros a {
+  color: #ffaf03;
+  font-size: 30px;
+  position: relative;
+  top: 150px;
+  display: inline-block;
+  /* علشان البوردر يكون على قد الكلمة */
+  padding: 5px 50px;
+  /* تحكم في المسافة بين الكلام والبوردر */
+  /* لون وشكل البوردر */
+  border-radius: 18px;
+  /* لو عاوز اطراف دائرية */
+  transition: all 0.3s ease;
+  /* للأنيميشن */
+  left: 0px;
+  text-decoration: underline;
+  background-color: #000;
+
+}
+
+.heros a:hover {
+  color: #000;
+  background-color: #ffaf03;
+}
+
+/*الصور المصغرة*/
+
+.header-container {
+  text-align: center;
+  /* لتوسيط العنوان أفقياً */
+  padding: 20px;
+  /* لإضافة مساحة حول العنوان */
+  margin-bottom: 30px;
+  /* لإضافة مساحة أسفل العنوان لفصله عن الصور */
+  /* يمكنك إضافة المزيد من التنسيقات هنا مثل لون الخلفية، لون الخط، حجم الخط، إلخ. */
+}
+
+.header-container h1 {
+  color: #333;
+  /* مثال على لون الخط */
+  font-size: 2em;
+  /* مثال على حجم الخط */
+  margin: 0;
+  /* لإزالة الهوامش الافتراضية للعنوان */
+}
+
+.thumbnails-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* للسماح للصور بالانتقال إلى سطر جديد إذا لم يكن هناك مساحة كافية */
+  justify-content: center;
+  /* لتوسيط الصور أفقياً */
+  gap: 20px;
+  /* المسافة بين الصور المصغرة */
+  padding: 20px;
+}
+
+.thumbnail-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  /* إزالة التسطير من الروابط */
+  color: #333;
+}
+
+.thumbnail {
+  width: 80px;
+  /* حجم الدائرة */
+  height: 80px;
+  /* حجم الدائرة */
+  border-radius: 50%;
+  /* لجعل الشكل دائري */
+  overflow: hidden;
+  /* لإخفاء أي جزء من الصورة يتجاوز الدائرة */
+  border: 2px solid #ddd;
+  /* حدود دائرية */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* لملء الدائرة بالصورة مع الحفاظ على نسبة العرض إلى الارتفاع */
+}
+
+.thumbnail i {
+  /* تنسيق أيقونة "الكل" */
+  font-size: 30px;
+  color: #555;
+}
+
+.thumbnail-link span {
+  font-size: 0.9em;
+}
+
+.thumbnail-link:hover .thumbnail {
+  border-color: gold;
+  /* تغيير لون الحدود عند التhover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*poster*/
+.poster img {
+  width: 80%;
+  height: 550px;
+  position: relative;
+  right: 130px;
+  border-radius: 20px;
+  opacity: 97%;
+}
+
+.poster h1 {
+  color: #000;
+  position: relative;
+  bottom: 320px;
+  text-align: center;
+  font-size: 50px;
+  background-color: gold;
+  display: inline-block;
+  /* علشان البوردر يكون على قد الكلمة */
+  padding: 5px 50px;
+  /* تحكم في المسافة بين الكلام والبوردر */
+  border: 2px solid #f7c35f;
+  /* لون وشكل البوردر */
+  border-radius: 28px;
+  /* لو عاوز اطراف دائرية */
+  transition: all 0.3s ease;
+  /* للأنيميشن */
+  right: 225px;
+
+}
+
+.poster a {
+  display: block;
+  text-align: center;
+  position: relative;
+  bottom: 550px;
+  color: #000;
+  border-radius: 15px;
+  background-color: #0000006a;
+  font-size: 30px;
+  display: inline-block;
+  /* علشان البوردر يكون على قد الكلمة */
+  padding: 5px 50px;
+  /* تحكم في المسافة بين الكلام والبوردر */
+  border: 2px solid #f7c35f;
+  /* لون وشكل البوردر */
+  border-radius: 28px;
+  /* لو عاوز اطراف دائرية */
+  transition: all 0.3s ease;
+  /* للأنيميشن */
+  left: 400px;
+  text-decoration: none;
+  margin-top: 100px;
+}
+
+.poster a:hover {
+  color: #f7c35f;
+  background-color: #000;
+}
+
+
+
+/*المنتجات المميزة*/
+.featured-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #333;
+  position: relative;
+}
+
+
+.featured-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #f7c35f;
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
+/* شبكة المنتجات */
+.products-grids {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 أعمدة ثابتة */
+  gap: 20px;
+  padding: 0 40px;
+}
+
+/* كارت المنتج */
+.product-cards {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  height: 300px;
+  width: 300px;
+
+}
+
+.product-cards:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-cards img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-cards h3 {
+  margin: 15px 0 10px;
+  font-size: 20px;
+  color: #333;
+}
+
+.product-cards p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #777;
+}
+
+/* خلفية القسم */
+.featured-products {
+  background: #f9f9f9;
+  padding: 50px 0;
+}
+
+
+/* المميزات*/
+.container4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* إنشاء شبكة مرنة بثلاثة أعمدة على الأقل */
+  gap: 20px;
+  /* مساحة بين المربعات */
+  width: 90%;
+  /* عرض الحاوية */
+  max-width: 1200px;
+  /* أقصى عرض للحاوية */
+  padding: 20px;
+  position: relative;
+  right: 95px;
+}
+
+.header-container4 {
+  text-align: center;
+  /* توسيط النص داخل الحاوية */
+  padding: 20px;
+  /* إضافة بعض المساحة حول العنوان */
+  margin-bottom: 30px;
+  /* إضافة مساحة أسفل العنوان لفصله عن المربعات */
+
+}
+
+.header-container h1 {
+  color: #333;
+  /* مثال على لون الخط */
+  font-size: 2.5em;
+  /* مثال على حجم الخط */
+  margin: 0;
+  /* إزالة الهوامش الافتراضية للعنوان */
+
+}
+
+.box {
+  background-color: #333;
+  /* لون خلفية المربعات */
+  border-radius: 8px;
+  /* حواف دائرية */
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* ظل خفيف */
+  transition: transform 0.3s ease-in-out;
+  /* تأثير التحريك عند التhover */
+}
+
+.box:hover {
+  transform: translateY(-5px);
+  /* رفع المربع قليلاً عند التhover */
+}
+
+.box i {
+  font-size: 48px;
+  /* حجم الأيقونة */
+  color: #ff9800;
+  /* لون الأيقونة (يمكن تغييره) */
+  margin-bottom: 15px;
+}
+
+.box h3 {
+  color: #333;
+  /* لون العنوان */
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.box p {
+  color: #fef;
+  /* لون الوصف */
+  font-size: 16px;
+  line-height: 1.6;
 }

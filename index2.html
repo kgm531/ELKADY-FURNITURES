@@ -1,240 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ELKADY FURNITURES</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
-
-  <!-- Header with Logo, Navbar and Hamburger Menu -->
-  <header>
-    <div class="container header-flex">
-<div class="logo">
-  <img src="img/logo.png" alt="ELKADY FURNITURES" class="logo-image">
-</div>      <nav class="main-nav">
-        <a href="index.html">الرئيسية</a>
-        <a href="Product.html">المنتجات</a>
-        <a href="about.html">من نحن</a>
-        <a href="contact.html">تواصل معنا</a>
-      </nav>
-      <div class="menu-container">
-        <button class="menu-toggle" onclick="toggleMenu()">
-          <h5>القائمة</h5>
-          <i class="fas fa-bars"></i>
-        </button>
-        <h3></h3>
-        <ul class="dropdown"  id="dropdownMenu">
-          <li><a href="#tables">الترابيزات</a></li>
-          <li><a href="#closets">الدواليب</a></li>
-          <li><a href="#mirrors">المرايات</a></li>
-          <li><a href="#shoe">الجزامات</a></li>
-          <li><a href="#chairs">الكراسي</a></li>
-          <li><a href="#tvunits">وحدات تليفزيون</a></li>
-          <li><a href="#kitchencar"> عربات مطبخ</a></li>
-          <li><a href="#coffetables">طاولات قهوة</a></li>
-        </ul>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <div class="hero">
-    <div class="overlay">
-      <h1>تصاميم فاخرة تليق بذوقك</h1>
-      <p>اختار من تشكيلتنا المميزة لأثاث المنزل</p>
-    </div>
-  </div>
-
-  <!-- Products Sections -->
-  <main id="products">
-
-    <!-- الكراسي -->
-    <section class="products-section">
-      <h2 class="section-title">الكراسي</h2>
-  
-      <!-- صورة بنر كبيرة للقسم -->
-      <div class="section-banner">
-        <img src="img/كراسي تعديل.png" alt="قسم الكراسي">
-      </div>
-  
-      <!-- المنتجات -->
-      <div class="products">
-        <div class="product-card">
-          <img src="img/ترابيزة3.jpg" alt="كرسي 1">
-          <h4>كرسي جلد فاخر</h4>
-          <p>مريح وأنيق لغرفة المعيشة</p>
-          <span>1200 ج.م</span>
-        </div>
-        <div class="product-card">
-          <img src="img/ترابيزات وكراسي1.jpg" alt="كرسي 2">
-          <h4>كرسي خشب مودرن</h4>
-          <p>تصميم عصري بجودة عالية</p>
-          <span>950 ج.م</span>
-        </div>
-        <!-- كرر هذا البلوك لباقي المنتجات -->
-      </div>
-    </section>
-  
-  </main>
-  
-    <!-- الترابيزات -->
-    <section class="products-section">
-      <h2 class="section-title">الترابيزات</h2>
-      <div class="products">
-        <div class="product-card">
-          <img src="https://via.placeholder.com/250x180?text=ترابيزة" alt="ترابيزة">
-          <h4>ترابيزة خشبية كلاسيك</nabla>
-          <p>مثالية لغرف الطعام</p>
-          <span>2200 ج.م</span>
-        </div>
-      </div>
-    </section>
-    <!-- وحدات إضاءة -->
-    <section class="products-section">
-      <h2 class="section-title">وحدات إضاءة</h2>
-      <div class="products">
-        <div class="product-card">
-          <img src="https://via.placeholder.com/250x180?text=إضاءة" alt="إضاءة">
-          <h4>مصباح مودرن</h4>
-          <p>يضيف لمسة فنية للمكان</p>
-          <span>850 ج.م</span>
-        </div>
-      </div>
-    </section>
-    <!-- المرايات -->
-    <section class="products-section">
-      <h2 class="section-title">المرايات</h2>
-      <div class="products">
-        <div class="product-card">
-          <img src="https://via.placeholder.com/250x180?text=مرآة" alt="مرآة">
-          <h4>مرآة جدارية بإطار ذهبي</h4>
-          <p>لمسة فخامة لديكورك</p>
-          <span>950 ج.م</span>
-        </div>
-      </div>
-    </section>
-    <!-- الجزامات -->
-    <section class="products-section">
-      <h2 class="section-title">الجزامات</h2>
-      <div class="products">
-        <div class="product-card">
-          <img src="https://via.placeholder.com/250x180?text=جزامة" alt="جزامة">
-          <h4>جزامة مودرن</h4>
-          <p>بتصميم عملي وأنيق</p>
-          <span>1450 ج.م</span>
-        </div>
-      </div>
-    </section>
-    <!-- الدواليب -->
-    <section class="products-section">
-      <h2 class="section-title">الدواليب</h2>
-      <div class="products">
-        <div class="product-card">
-          <img src="https://via.placeholder.com/250x180?text=دولاب" alt="دولاب">
-          <h4>دولاب تخزين خشبي</h4>
-          <p>مناسب لغرف النوم أو الأطفال</p>
-          <span>3300 ج.م</span>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- About Section -->
-  <section class="extra-section" id="about">
-    <h3>نبذة عنّا</h3>
-    <p>نحن نقدم أثاث راقٍ بجودة عالية وتصاميم مميزة تناسب جميع الأذواق.</p>
-  </section>
-
-  <!-- Testimonials Slider -->
-  <section class="testimonials-slider">
-    <div class="container">
-      <h2 class="section-title">What Clients Says</h2>
-      <div class="slider">
-        <button class="slider-nav prev">&#10094;</button>
-        <div class="slides">
-          <div class="slide active">
-            <div class="testimonial-card">
-              <img class="avatar" src="https://i.pravatar.cc/80?img=10" alt="Nada">
-              <p class="testimonial-text">"المرايا جميلة جدا والكوالينتي تحفة أحلى مما توقعت، شكرًا جدا!"</p>
-              <div class="stars">★★★★★</div>
-              <div class="client-name">Nada Zakaria</div>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="testimonial-card">
-              <img class="avatar" src="https://i.pravatar.cc/80?img=11" alt="Sahar">
-              <p class="testimonial-text">"Great experience High quality furniture and precise finishing. Very accurate timing."</p>
-              <div class="stars">★★★★★</div>
-              <div class="client-name">Sahar Morsi</div>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="testimonial-card">
-              <img class="avatar" src="https://i.pravatar.cc/80?img=12" alt="Yassin">
-              <p class="testimonial-text">"وحدة التلفزيون ممتازة كخامات مستخدمة و Finish رائع رغم أني طلبت أن الأودرر يكون جاهز في أقل من أسبوع لظروف سفري."</p>
-              <div class="stars">★★★★★</div>
-              <div class="client-name">Yassin Zidan</div>
-            </div>
-          </div>
-        </div>
-        <button class="slider-nav next">&#10095;</button>
-      </div>
-      <div class="dots">
-        <span class="dot active" data-index="0"></span>
-        <span class="dot" data-index="1"></span>
-        <span class="dot" data-index="2"></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="extra-section" id="contact">
-    <h3>تواصل معنا</h3>
-    <p>📞 01012345678 | 01098765432</p>
-    <div class="social-icons-footer">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-tiktok"></i></a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 ELKADY FURNITURES - جميع الحقوق محفوظة</p>
-  </footer>
-
-  <!-- Slider Script -->
-  <script>
-    const slides = document.querySelectorAll('.slide');
-    const prevBtn = document.querySelector('.slider-nav.prev');
-    const nextBtn = document.querySelector('.slider-nav.next');
-    const dots = document.querySelectorAll('.dot');
-    let current = 0;
-    function updateSlider(index) {
-      slides[current].classList.remove('active');
-      dots[current].classList.remove('active');
-      current = (index + slides.length) % slides.length;
-      slides[current].classList.add('active');
-      dots[current].classList.add('active');
-    }
-    prevBtn.addEventListener('click', () => updateSlider(current - 1));
-    nextBtn.addEventListener('click', () => updateSlider(current + 1));
-    dots.forEach(dot => dot.addEventListener('click', () => updateSlider(parseInt(dot.dataset.index))));
-
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-      document.querySelector('.menu-container').classList.toggle('open');
-    });
-
-   
-  </script>
-
-  
-    
-  
-
-</body>
-</html>
