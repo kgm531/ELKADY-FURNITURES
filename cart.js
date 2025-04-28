@@ -11,19 +11,19 @@ function addToCart(productName, productPrice, productImage) {
 
 // دالة لتحديث عدد العناصر في العربة
 function updateCartCount() {
-    let cartCount = document.getElementById('cart-count');
+    const cartCount = document.getElementById('cart-count');
     cartCount.innerText = cart.length;
 }
 
 // دالة لتحديث محتويات العربة
 function updateCartItems() {
-    let cartItemsList = document.getElementById('cart-items');
-    cartItemsList.innerHTML = '';
+    const cartItemsList = document.getElementById('cart-items');
+    cartItemsList.innerHTML = ''; // مسح المحتوى القديم
 
     cart.forEach((item, index) => {
-        let li = document.createElement('li');
+        const li = document.createElement('li');
         li.innerHTML = `
-            ${item.name} - ${item.price} جنيه
+            ${item.name} - ${item.price} ريال
             <span class="remove" onclick="removeFromCart(${index})">حذف</span>
         `;
         cartItemsList.appendChild(li);
@@ -32,7 +32,7 @@ function updateCartItems() {
 
 // دالة لحساب المجموع الإجمالي
 function updateTotalPrice() {
-    let totalPrice = cart.reduce((total, item) => total + item.price, 0);
+    const totalPrice = cart.reduce((total, item) => total + item.price, 0);
     document.getElementById('total-price').innerText = totalPrice;
 }
 
@@ -46,13 +46,13 @@ function removeFromCart(index) {
 
 // دالة لفتح نافذة العربة
 function toggleCart() {
-    let modal = document.getElementById('cart-modal');
+    const modal = document.getElementById('cart-modal');
     modal.classList.toggle('open');
 }
 
 // دالة لإغلاق نافذة العربة
 function closeCart() {
-    let modal = document.getElementById('cart-modal');
+    const modal = document.getElementById('cart-modal');
     modal.classList.remove('open');
 }
 
@@ -62,7 +62,7 @@ function checkout() {
         alert('العربة فارغة');
     } else {
         alert('تم إتمام الطلب بنجاح');
-        cart = [];
+        cart = []; // مسح العربة بعد إتمام الطلب
         updateCartCount();
         updateCartItems();
         updateTotalPrice();
@@ -76,23 +76,22 @@ function sendOrderToWhatsApp() {
         return;
     }
 
-    let message = 'تفاصيل الطلب:\n\n';
+    let message = '🛒 تفاصيل الطلب:\n\n';
 
     cart.forEach(item => {
-        // ترميز اسم الصورة حتى لا يحدث خطأ بسبب الفراغات
-        let encodedImage = encodeURIComponent(item.image);
-        let imageUrl = `${window.location.origin}/${encodedImage}`;
-
-        message += `${item.name}\n`;
-        message += `السعر: ${item.price} جنية\n`;
-        message += `صورة المنتج: ${imageUrl}\n\n`;
+        message += `🔸 ${item.name}\n💰 السعر: ${item.price} ريال\n`;
+        if (item.image) {
+            const imageUrl = item.image.startsWith('http') ? item.image : `${window.location.origin}/${item.image}`;
+            message += `🖼️ صورة المنتج: ${imageUrl}\n`;
+        }
+        message += '\n'; // سطر فارغ بين المنتجات
     });
 
-    let totalPrice = cart.reduce((total, item) => total + item.price, 0);
-    message += `المجموع الكلي: ${totalPrice} جنية`;
+    const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+    message += `\n🔻 المجموع الكلي: ${totalPrice} ريال 🔻`;
 
-    let phoneNumber = '201225406810';
-    let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const phoneNumber = '201225406810'; // رقم الهاتف مع كود الدولة
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     window.open(url, '_blank');
 }
