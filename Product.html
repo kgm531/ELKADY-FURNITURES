@@ -1413,7 +1413,7 @@ hr {
     <script src="cart.js"></script>
 
     <script>
-        AOS.init({ duration: 1200, once: true });
+        AOS.init({ duration: 1000, once: true });
 
         const filterButtons = document.querySelectorAll('.filter-btn');
             const productSections = document.querySelectorAll('.products-section');
@@ -1437,13 +1437,10 @@ hr {
                             section.style.display = 'none';  // إخفاء القسم
                         }
                     });
+                            AOS.refresh();
                 });
             });
 
-
-
-
-       
 
          // كود الكتابة المتكرر
             const phrases = ["المنتجات", "ELKADY FURNITURES"];
