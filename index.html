@@ -27,35 +27,43 @@
 </button>
 
   <!-- Header with Logo, Navbar and Hamburger Menu -->
-  <header>
-    <div class="container header-flex">
-      <div class="logo">
-        <img src="img/logo.png">
-      </div>
-      <nav class="main-nav">
-        <a href="index.html">الرئيسية</a>
-        <a href="Product.html">المنتجات</a>
-        <a href="about.html">من نحن</a>
-        <a href="contact.html">تواصل معنا</a>
-      </nav>
-      <div class="menu-container">
-        <button class="menu-toggle" onclick="toggleMenu()">
-          <h5>القائمة</h5>
-          <i class="fas fa-bars"></i>
-        </button>
-        <h3></h3>
-        <ul class="dropdown"  id="dropdownMenu">
-          <li><a href="#tables">الترابيزات والكراسي</a></li>
-          <li><a href="#closets">الدواليب</a></li>
-          <li><a href="#mirrors">المرايات</a></li>
-          <li><a href="#shoe">الجزامات</a></li>
-          <li><a href="#tvunits">وحدات تليفزيون</a></li>
-          <li><a href="#kitchencar"> عربات مطبخ</a></li>
-          <li><a href="#coffetables">طاولات قهوة</a></li>
-        </ul>
-      </div>
+<header>
+  <div class="container header-flex">
+    
+    <!-- Logo -->
+    <div class="logo">
+      <img src="img/logo.png" alt="Logo">
     </div>
-  </header>
+
+    <!-- Main Navigation for desktop/tablet -->
+    <nav class="main-nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="Product.html">المنتجات</a>
+      <a href="about.html">من نحن</a>
+      <a href="contact.html">تواصل معنا</a>
+    </nav>
+
+    <!-- Hamburger Menu for mobile -->
+    <div class="menu-container" id="menuContainer">
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+        <h5>القائمة</h5>
+      </button>
+
+      <ul class="dropdown" id="dropdownMenu">
+        <li><a href="#tables">الترابيزات والكراسي</a></li>
+        <li><a href="#closets">الدواليب</a></li>
+        <li><a href="#mirrors">المرايات</a></li>
+        <li><a href="#shoe">الجزامات</a></li>
+        <li><a href="#tvunits">وحدات تليفزيون</a></li>
+        <li><a href="#kitchencar">عربات مطبخ</a></li>
+        <li><a href="#coffetables">طاولات قهوة</a></li>
+      </ul>
+    </div>
+
+  </div>
+</header>
+
 
   <!-- Hero Section -->
   <div class="heros">
