@@ -184,8 +184,8 @@ hr {
 /* تنسيق أيقونة العربة في أعلى اليمين */
 .cart-icon {
     position: fixed;
-    top: 80px; /* المسافة من الأعلى */
-    right: 20px; /* المسافة من اليمين */
+    top: 200px; /* المسافة من الأعلى */
+    right:10px; /* المسافة من اليمين */
     background-color: #f7c35f; /* لون الخلفية */
     border-radius: 50%; /* شكل دائري */
     padding: 15px;
@@ -358,7 +358,30 @@ hr {
 </head>
 
 <body>
-    
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <!-- ✅ تم تعديل هذا الجزء فقط لتقسيم العرض الجانبي -->
+        <div class="image-section">
+            <div class="main-image-container">
+                <img id="mainImage" src="" alt="صورة المنتج" />
+                <div class="nav-buttons">
+                    <button id="prevBtn">&#10094;</button>
+                    <button id="nextBtn">&#10095;</button>
+                </div>
+            </div>
+
+            <div class="vertical-divider"></div>
+
+            <div id="componentsGallery" class="gallery"></div>
+        </div>
+
+    </div>
+</div>
+
+
+
 <!-- أيقونة العربة -->
 <div class="cart-icon" onclick="toggleCart()">
     <img src="img/delivery-truck.png" alt="Cart">
@@ -372,7 +395,7 @@ hr {
         <ul id="cart-items">
             <!-- سيتم إضافة المنتجات هنا -->
         </ul>
-        <p class="total-price">الإجمالي: <span id="total-price">0</span> ريال</p>
+        <p class="total-price">الإجمالي: <span id="total-price">0</span> جنية </p>
 <button onclick="sendOrderToWhatsApp()">إتمام الطلب</button>
     </div>
 </div>
@@ -438,7 +461,7 @@ hr {
                 <hr>
                 <br>
                 <div class="products">
-                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in">
+                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in" data-components="img/ترابيزات-وكراسي1.jpg, img/ترابيزات-وكراسي2.webp, img/ترابيزات-وكراسي3.webp">
                         <img src="img/ترابيزات-وكراسي1.jpg" alt="كرسي 1" onclick="openPopup(this.src)">
                         <h4>كرسي جلد فاخر</h4>
                         <p>مريح وأنيق لغرفة المعيشة</p>
@@ -1358,19 +1381,7 @@ hr {
                         </section>
 
         </div>
-<!-- نافذة عرض الصورة -->
-<div id="popup" class="popup" onclick="closePopup(event)">
-    <span class="close-btn" onclick="closePopup(event)">×</span>
 
-    <!-- محتوى النافذة -->
-    <div class="popup-content">
-        <img id="popup-img" src="" alt="Product Image">
-        <div class="product-details">
-            <p id="product-name" class="product-name"></p>
-            <p id="product-price" class="product-price"></p>
-        </div>
-    </div>
-</div>
 
 
     <!-- Footer -->
@@ -1476,30 +1487,65 @@ hr {
             };
 
     
-    function openPopup(src, name, price) {
-        // تحديث الصورة وبيانات المنتج
-        document.getElementById('popup-img').src = src;
+   
 
-        // عرض النافذة المنبثقة
-        const popup = document.getElementById('popup');
-        popup.style.display = 'flex';
-        popup.style.opacity = '1';
+    
+//----------------------------------------------------------------------------------//
+  const modal = document.getElementById("productModal");
+    const closeModal = document.querySelector(".close");
+    const mainImage = document.getElementById("mainImage");
+    const gallery = document.getElementById("componentsGallery");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    let currentIndex = 0;
+    let images = [];
+
+    document.querySelectorAll(".product-card").forEach(card => {
+        card.addEventListener("click", () => {
+            const mainImg = card.querySelector("img").src;
+            images = card.dataset.components?.split(",") || [mainImg];
+            currentIndex = 0;
+            updateMainImage();
+
+            gallery.innerHTML = "";
+            images.forEach((src, index) => {
+                const img = document.createElement("img");
+                img.src = src.trim();
+                img.addEventListener("click", () => {
+                    currentIndex = index;
+                    updateMainImage();
+                });
+                gallery.appendChild(img);
+            });
+
+            modal.style.display = "block";
+        });
+    });
+
+    function updateMainImage() {
+        mainImage.src = images[currentIndex].trim();
     }
 
-    function closePopup(event) {
-        // التحقق من أن الإغلاق تم بالنقر على الخلفية فقط
-        if (event.target === event.currentTarget || event.target === document.querySelector('.close-btn')) {
-            const popup = document.getElementById('popup');
-            popup.style.opacity = '0';
-            setTimeout(() => {
-                popup.style.display = 'none';
-            }, 300); // التأثير يستغرق 0.3 ثانية
+    prevBtn.onclick = () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateMainImage();
+    };
+
+    nextBtn.onclick = () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateMainImage();
+    };
+
+    closeModal.onclick = () => {
+        modal.style.display = "none";
+    };
+
+    window.onclick = e => {
+        if (e.target === modal) {
+            modal.style.display = "none";
         }
-    }
-
-    
-
-    
+    };
     </script>
 
 </body>
