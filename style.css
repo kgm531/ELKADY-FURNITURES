@@ -1046,7 +1046,7 @@ hr {
   .poster h1 {
     font-size: 1.8rem;
     /* حجم الخط يعادل 28px */
-    margin-top: -140px;
+    margin-top: -15px;
     padding: 5px 20px;
   }
 
@@ -1067,7 +1067,7 @@ hr {
   .poster h1 {
     font-size: 1.5rem;
     /* حجم الخط يعادل 24px */
-    margin-top: -120px;
+    margin-top: -15px;
     padding: 5px 15px;
   }
 
