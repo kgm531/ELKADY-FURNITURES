@@ -2401,11 +2401,10 @@ hr {
     };
 
     /************************************/
-      document.getElementById("applyFilters").addEventListener("click", filterAndSortProducts);
+     /* document.getElementById("applyFilters").addEventListener("click", filterAndSortProducts);
         document.getElementById("sortSelect").addEventListener("change", filterAndSortProducts);
 
         function parsePrice(text) {
-            // تحويل السعر مثل "23.000 ج.م" إلى 23000
             return parseFloat(text.replace(/[^\d.]/g, "").replace('.', '')) || 0;
         }
 
@@ -2422,7 +2421,6 @@ hr {
                 let priceText = priceSpan ? priceSpan.textContent : (fallbackPriceSpan ? fallbackPriceSpan.textContent : "0");
                 const price = parsePrice(priceText);
 
-                // إظهار أو إخفاء المنتج بناءً على السعر الأقصى
                 if (price <= maxPrice) {
                     card.style.display = "block";
                     card.setAttribute("data-price", price); // نضيف السعر لتسهيل الفرز
@@ -2440,12 +2438,11 @@ hr {
                 visibleCards.sort((a, b) => parseFloat(b.dataset.price) - parseFloat(a.dataset.price));
             }
 
-            // إعادة ترتيب العناصر داخل القسم
             const productsContainer = document.querySelector(".products");
             visibleCards.forEach(card => {
                 productsContainer.appendChild(card);
             });
-        }
+        }*/
     </script>
 
 </body>
