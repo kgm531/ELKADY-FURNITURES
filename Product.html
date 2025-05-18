@@ -454,6 +454,21 @@ hr {
 
         </div>
 
+        <div class="filter-sort-bar">
+            <label for="priceInput">أدخل السعر الأقصى:</label>
+            <input type="number" id="priceInput" placeholder="مثال: 1000" />
+        
+            <label for="sortSelect">فرز حسب:</label>
+            <select id="sortSelect" onchange="sortProducts()">
+                <option value="">ترتيب حسب السعر</option>
+                <option value="asc">الأقل سعراً</option>
+                <option value="desc">الأعلى سعراً</option>
+            </select>
+        
+        
+            <button id="applyFilters">تطبيق</button>
+        </div>
+
         <!-- المنتجات -->
         <div class="products-grid">
 
@@ -505,7 +520,7 @@ hr {
                         <span>18.000 ج.م</span>
                         <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/ترابيزات-وكراسي4.webp')">أضف إلى العربة</a>
                     </div>
-                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in">
+                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in" data-components="img/كراسي/كراسي5/1.jpeg , img/كراسي/كراسي5/2.jpeg , img/كراسي/كراسي5/3.jpeg">
                         <img src="img/ترابيات-وكراسي9.jpeg" alt="كرسي خشب مودرن" onclick="openPopup(this.src)">
                         <h4>طاولة خشبية</h4>
                         <p>تصميم عصري بجودة عالية</p>
@@ -545,7 +560,7 @@ hr {
                         <span>950 ج.م</span>
                         <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/ترابيزات-وكراسي8.webp')">أضف إلى العربة</a>
                     </div>
-                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in">
+                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in" data-components="img/كراسي/كراسي9/1.jpeg , img/كراسي/كراسي9/2.jpeg , img/كراسي/كراسي9/3.jpeg , img/كراسي/كراسي9/4.jpeg">
                         <img src="img/كرسي1.jpg" alt="كرسي خشب مودرن" onclick="openPopup(this.src)">
                         <h4> هوليا كرسي طاولة طعام
                         </h4>
@@ -556,7 +571,7 @@ hr {
                         <span>3400 ج.م</span>
                         <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/ترابيزات-وكراسي8.webp')">أضف إلى العربة</a>
                     </div>
-                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in">
+                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in" data-components="img/كراسي/كراسي10/1.jpeg , img/كراسي/كراسي10/2.jpeg">
                         <img src="img/كرسي2.jpg" alt="كرسي خشب مودرن" onclick="openPopup(this.src)">
                         <h4> هلين كرسي طاولة طعام
                         </h4>
@@ -567,7 +582,7 @@ hr {
                         <span>4300 ج.م</span>
                         <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/ترابيزات-وكراسي8.webp')">أضف إلى العربة</a>
                     </div>
-                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in">
+                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in" data-components="img/كراسي/كراسي11/1.jpeg , img/كراسي/كراسي11/2.jpeg , img/كراسي/كراسي11/3.jpeg , img/كراسي/كراسي11/4.jpeg ">
                         <img src="img/كرسي3.jpg" alt="كرسي خشب مودرن" onclick="openPopup(this.src)">
                         <h4>نولا كرسي طاولة طعام
                         </h4>
@@ -578,7 +593,7 @@ hr {
                         <span>5400 ج.م</span>
                         <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/ترابيزات-وكراسي8.webp')">أضف إلى العربة</a>
                     </div>
-                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in">
+                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in" data-components="img/كراسي/كراسي12/1.jpeg , img/كراسي/كراسي12/2.jpeg , img/كراسي/كراسي12/3.jpeg , img/كراسي/كراسي12/4.jpeg , img/كراسي/كراسي12/5.jpeg">
                         <img src="img/كرسي4.jpg" alt="كرسي خشب مودرن" onclick="openPopup(this.src)">
                         <h4>كرسي طاولة الطعام جيلا
                         </h4>
@@ -600,7 +615,7 @@ hr {
                         <span>10.300 ج.م</span>
                         <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/ترابيزات-وكراسي8.webp')">أضف إلى العربة</a>
                     </div>
-                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in">
+                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in" data-components="img/كراسي/كراسي24/1.jpeg , img/كراسي/كراسي24/2.jpeg , img/كراسي/كراسي24/3.jpeg , img/كراسي/كراسي24/4.jpeg , img/كراسي/كراسي24/5.jpeg">
                         <img src="img/كرسي6.jpg" alt="كرسي خشب مودرن" onclick="openPopup(this.src)">
                         <h4>Elwarsha
                             لويس كرسى دوار أبيض حديث</h4>
@@ -611,7 +626,7 @@ hr {
                         <span>7400 ج.م</span>
                         <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/ترابيزات-وكراسي8.webp')">أضف إلى العربة</a>
                     </div>
-                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in">
+                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in" data-components="img/كراسي/كراسي23/1.jpeg ,img/كراسي/كراسي23/2.jpeg , img/كراسي/كراسي23/3.jpeg , img/كراسي/كراسي23/4.jpeg , img/كراسي/كراسي23/5.jpeg ">
                         <img src="img/كرسي7.jpg" alt="كرسي خشب مودرن" onclick="openPopup(this.src)">
                         <h4>لوتشى كرسي خشب طبيعى
                         </h4>
@@ -622,7 +637,7 @@ hr {
                         <span>8400 ج.م</span>
                         <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/ترابيزات-وكراسي8.webp')">أضف إلى العربة</a>
                     </div>
-                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in">
+                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in" data-components="img/كراسي/كراسي13/1.jpeg ,img/كراسي/كراسي13/2.jpeg,img/كراسي/كراسي13/3.jpeg , img/كراسي/كراسي13/4.jpeg ">
                         <img src="img/كرسي8.jpg" alt="كرسي خشب مودرن" onclick="openPopup(this.src)">
                         <h4>لورميس كرسي فوتيه
                         </h4>
@@ -633,7 +648,7 @@ hr {
                         <span>8400 ج.م</span>
                         <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/ترابيزات-وكراسي8.webp')">أضف إلى العربة</a>
                     </div>
-                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in">
+                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in" data-components="img/كراسي/كراسي22/1.jpeg , img/كراسي/كراسي22/2.jpeg ,img/كراسي/كراسي22/3.jpeg , img/كراسي/كراسي22/4.jpeg ">
                         <img src="img/كرسي9.jpg" alt="كرسي خشب مودرن" onclick="openPopup(this.src)">
                         <h4>لاتويا وحدة ركنية ذات مقعد واحد
                         </h4>
@@ -644,7 +659,7 @@ hr {
                         <span>10.800 ج.م</span>
                         <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/ترابيزات-وكراسي8.webp')">أضف إلى العربة</a>
                     </div>
-                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in">
+                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in" data-components="img/كراسي/كراسي21/1.jpeg , img/كراسي/كراسي21/2.jpeg ,img/كراسي/كراسي21/3.jpeg , img/كراسي/كراسي21/4.jpeg ">
                         <img src="img/كرسي10.jpg" alt="كرسي خشب مودرن" onclick="openPopup(this.src)">
                         <h4>لاندرو كرسى خشب طبيعى منجد
                         </h4>
@@ -655,7 +670,7 @@ hr {
                         <span>6800 ج.م</span>
                         <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/ترابيزات-وكراسي8.webp')">أضف إلى العربة</a>
                     </div>
-                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in">
+                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in" data-components="img/كراسي/كراسي14/1.jpeg ,img/كراسي/كراسي14/2.jpeg ,img/كراسي/كراسي14/3.jpeg , img/كراسي/كراسي14/4.jpeg ">
                         <img src="img/كرسي11.jpg" alt="كرسي خشب مودرن" onclick="openPopup(this.src)">
                         <h4>لاتينو كرسي فوتيه مودرن
                         </h4>
@@ -666,7 +681,7 @@ hr {
                         <span>7500 ج.م</span>
                         <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/ترابيزات-وكراسي8.webp')">أضف إلى العربة</a>
                     </div>
-                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in">
+                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in" data-components="img/كراسي/كراسي15/1.jpeg ,img/كراسي/كراسي15/2.jpeg ,img/كراسي/كراسي15/3.jpeg , img/كراسي/كراسي15/4.jpeg , img/كراسي/كراسي15/5.jpeg ">
                         <img src="img/كرسي12.jpg" alt="كرسي خشب مودرن" onclick="openPopup(this.src)">
                         <h4>كرسي فوتيه ويلي خشب طبيعي
                         </h4>
@@ -677,7 +692,7 @@ hr {
                         <span>8400 ج.م</span>
                         <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/ترابيزات-وكراسي8.webp')">أضف إلى العربة</a>
                     </div>
-                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in">
+                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in" data-components="img/كراسي/كراسي16/1.jpeg ,img/كراسي/كراسي16/2.jpeg , img/كراسي/كراسي16/3.jpeg , img/كراسي/كراسي16/4.jpeg ">
                         <img src="img/كرسي13.jpg" alt="كرسي خشب مودرن" onclick="openPopup(this.src)">
                         <h4>كرسي فوتيه خشب طبيعي كاترن
                         </h4>
@@ -688,7 +703,7 @@ hr {
                         <span>7400 ج.م</span>
                         <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/ترابيزات-وكراسي8.webp')">أضف إلى العربة</a>
                     </div>
-                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in">
+                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in" data-components="img/كراسي/كراسي17/1.jpeg ,img/كراسي/كراسي17/2.jpeg, img/كراسي/كراسي17/3.jpeg,img/كراسي/كراسي17/4.jpeg,img/كراسي/كراسي17/5.jpeg">
                         <img src="img/كرسي14.jpg" alt="كرسي خشب مودرن" onclick="openPopup(this.src)">
                         <h4>كرسي خشب مودرن</h4>
                         <p>تصميم عصري بجودة عالية</p>
@@ -698,7 +713,7 @@ hr {
                         <span>6200 ج.م</span>
                         <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/ترابيزات-وكراسي8.webp')">أضف إلى العربة</a>
                     </div>
-                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in">
+                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in" data-components="img/كراسي/كراسي18/1.jpeg , img/كراسي/كراسي18/2.jpeg , img/كراسي/كراسي18/3.jpeg , img/كراسي/كراسي18/4.jpeg">
                         <img src="img/كرسي15.jpg" alt="كرسي خشب مودرن" onclick="openPopup(this.src)">
                         <h4>سيلا كرسى مبطن مع قاعدة دوارة 360 درجة
                         </h4>
@@ -709,7 +724,7 @@ hr {
                         <span>8800 ج.م</span>
                         <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/ترابيزات-وكراسي8.webp')">أضف إلى العربة</a>
                     </div>
-                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in">
+                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in" data-components="img/كراسي/كراسي19/1.jpeg , img/كراسي/كراسي19/2.jpeg , img/كراسي/كراسي19/3.jpeg , img/كراسي/كراسي19/4.jpeg , img/كراسي/كراسي19/5.jpeg">
                         <img src="img/كرسي16.jpg" alt="كرسي خشب مودرن" onclick="openPopup(this.src)">
                         <h4>ريكوتا كرسي فوتيه
                         </h4>
@@ -720,7 +735,7 @@ hr {
                         <span>7140 ج.م</span>
                         <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/ترابيزات-وكراسي8.webp')">أضف إلى العربة</a>
                     </div>
-                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in">
+                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in" data-components="img/كراسي/كراسي20/1.jpeg , img/كراسي/كراسي20/2.jpg , img/كراسي/كراسي20/3.jpeg , img/كراسي/كراسي20/4.jpeg , img/كراسي/كراسي20/5.jpeg">
                         <img src="img/كرسي17.jpg" alt="كرسي خشب مودرن" onclick="openPopup(this.src)">
                         <h4>رويستون كرسي استرخاء
                         </h4>
@@ -746,19 +761,19 @@ hr {
                 <hr>
                 <br>
                 <div class="products">
-                    <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in" data-components="img\جزامات1/1706463483286.webp , img\جزامات1/1706463483309.webp , img\جزامات1/1706463483331.webp , img\جزامات1/1706463483353.webp , img\جزامات1/جزامات-ومقاعد تخزين2-.webp">
-                        <img src="img/جزامات-ومقاعد تخزين1.jpg" alt="جزامة مودرن" onclick="openPopup(this.src)">
+                    <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in" data-components="img/جزامات/جزامات1/1.webp , img/جزامات/جزامات1/2.webp , img/جزامات/جزامات1/3.webp ,img/جزامات/جزامات1/4.webp ">
+                        <img src="img/جزامات/جزامات1/1.webp" alt="جزامة مودرن" onclick="openPopup(this.src)">
                         <h4>آچينا خزانة أحذية رمادي</h4>
                         <p>بتصميم عملي وأنيق</p>
                         <div class="price-section">
                             <span class="old-price">7200 ج.م</span> <span class="new-price">9600 ج.م</span>
                         </div>
                         <span>9600 ج.م</span>
-                        <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/جزامات-ومقاعد تخزين1-.webp')">أضف إلى العربة</a>
+                        <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/جزامات/جزامات1/1.jpeg')">أضف إلى العربة</a>
                     </div>
                     
-                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in">
-                                <img src="img/جزامات-ومقاعد تخزين2.jpg" alt="جزامة مودرن" onclick="openPopup(this.src)">
+                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in" data-components="img/جزامات/جزامات2/1.jpeg , img/جزامات/جزامات2/2.jpeg , img/جزامات/جزامات2/3.jpeg , img/جزامات/جزامات2/4.jpeg , img/جزامات/جزامات2/5.jpeg">
+                                <img src="img/جزامات/جزامات2/1.jpeg" alt="جزامة مودرن" onclick="openPopup(this.src)">
                                 <h4>آليا خزانة أحذية متعددة الاستخدام</h4>
                                 <p>بتصميم عملي وأنيق</p>
                                 <div class="price-section">
@@ -767,7 +782,7 @@ hr {
                                 <span>14900 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/جزامات-ومقاعد تخزين2-.webp')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in">
+                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in" data-components="img/جزامات/جزامات3/1.jpeg , img/جزامات/جزامات3/2.jpeg , img/جزامات/جزامات3/3.jpeg , img/جزامات/جزامات3/4.jpeg ">
                                 <img src="img/جزامات-ومقاعد تخزين3.jpg" alt="جزامة مودرن" onclick="openPopup(this.src)">
                                 <h4>آماندا وحدة تخزين أحذية متعددة الاستخدام</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -777,7 +792,7 @@ hr {
                                 <span>7500 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/جزامات-ومقاعد تخزين3-.webp')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in">
+                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in" data-components="img/جزامات/جزامات4/1.jpeg , img/جزامات/جزامات4/2.jpeg , img/جزامات/جزامات4/3.jpeg , img/جزامات/جزامات4/4.jpeg">
                                 <img src="img/جزامات-ومقاعد تخزين4.jpg" alt="جزامة مودرن" onclick="openPopup(this.src)">
                                 <h4>آنجلوفا رف أحذية 7 رفوف</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -787,7 +802,7 @@ hr {
                                 <span>7650 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/جزامات-ومقاعد تخزين4-.webp')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in">
+                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in" data-components="img/جزامات/جزامات5/1.jpeg , img/جزامات/جزامات5/2.jpeg , img/جزامات/جزامات5/3.jpeg , img/جزامات/جزامات5/4.jpeg">
                                 <img src="img/جزامات-ومقاعد تخزين5.jpg" alt="جزامة مودرن" onclick="openPopup(this.src)">
                                 <h4>آندا رف الأحذية متعدد الاستخدام وعلاقة ملابس</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -797,7 +812,7 @@ hr {
                                 <span>9200 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/جزامات-ومقاعد تخزين5-.webp')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in">
+                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in" data-components="img/جزامات/جزامات6/1.jpeg , img/جزامات/جزامات6/2.jpeg , img/جزامات/جزامات6/3.jpeg , img/جزامات/جزامات6/4.jpeg , img/جزامات/جزامات6/5.jpeg ">
                                 <img src="img/جزامات-ومقاعد تخزين6.jpg" alt="جزامة مودرن" onclick="openPopup(this.src)">
                                 <h4>أوتنام منظم أحذية مودرن 3 درج</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -807,7 +822,7 @@ hr {
                                 <span>8500 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/جزامات-ومقاعد تخزين6-.webp')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in">
+                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in" data-components="img/جزامات/جزامات7/1.jpeg , img/جزامات/جزامات7/2.jpeg , img/جزامات/جزامات7/3.jpeg , img/جزامات/جزامات7/4.jpeg , img/جزامات/جزامات7/5.jpeg">
                                 <img src="img/جزامات-ومقاعد تخزين7.jpg" alt="جزامة مودرن" onclick="openPopup(this.src)">
                                 <h4>أورلا ستاند أحذية من البامبو الطبيعي</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -817,7 +832,7 @@ hr {
                                 <span>14400 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/جزامات-ومقاعد تخزين7-.webp')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in">
+                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in" data-components="img/جزامات/جزامات8/1.jpeg , img/جزامات/جزامات8/2.jpeg , img/جزامات/جزامات8/3.jpeg , img/جزامات/جزامات8/4.jpeg">
                                 <img src="img/جزامات-ومقاعد تخزين8.jpg" alt="جزامة مودرن" onclick="openPopup(this.src)">
                                 <h4>إبونا خزانة أحذية</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -827,7 +842,7 @@ hr {
                                 <span>8900 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/جزامات-ومقاعد تخزين8-.webp')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in">
+                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in" data-components="img/جزامات/جزامات9/1.jpeg , img/جزامات/جزامات9/2.jpeg , img/جزامات/جزامات9/3.jpeg , img/جزامات/جزامات9/4.jpeg , img/جزامات/جزامات9/5.jpeg">
                                 <img src="img/جزامات-ومقاعد تخزين9.jpg" alt="جزامة مودرن" onclick="openPopup(this.src)">
                                 <h4>إزينا جزامة مودرن 4 درج</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -837,8 +852,8 @@ hr {
                                 <span>7700 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/جزامات-ومقاعد تخزين9-.webp')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in">
-                                <img src="img/جزامات-ومقاعد تخزين10.jpg" alt="جزامة مودرن" onclick="openPopup(this.src)">
+                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in" data-components="img/جزامات/جزامات10/1.jpeg , img/جزامات/جزامات10/2.jpeg , img/جزامات/جزامات10/3.jpeg">
+                                <img src="img/جزامات-ومقاعد تخزين1.jpg" alt="جزامة مودرن" onclick="openPopup(this.src)">
                                 <h4>إيتك جزامة مودرن ٦ درج</h4>
                                 <p>بتصميم عملي وأنيق</p>
                                 <div class="price-section">
@@ -847,8 +862,8 @@ hr {
                                 <span>15100 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/جزامات-ومقاعد تخزين10-.webp')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in">
-                                <img src="img/جزامات-ومقاعد تخزين11.jpg" alt="جزامة مودرن" onclick="openPopup(this.src)">
+                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in" data-components="img/جزامات/جزامات11/1.jpeg , img/جزامات/جزامات11/2.jpeg , img/جزامات/جزامات11/3.jpeg , img/جزامات/جزامات11/4.jpeg">
+                                <img src="img/جزامات/جزامات11/1.jpeg" alt="جزامة مودرن" onclick="openPopup(this.src)">
                                 <h4>إيليت مقعد تخزين متعدد الاستخدام</h4>
                                 <p>بتصميم عملي وأنيق</p>
                                 <div class="price-section">
@@ -857,7 +872,7 @@ hr {
                                 <span>6500 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/جزامات-ومقاعد تخزين10-.webp')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in">
+                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in" data-components="img/جزامات/جزامات12/1.jpeg , img/جزامات/جزامات12/2.jpeg , img/جزامات/جزامات12/3.jpeg , img/جزامات/جزامات12/4.jpeg">
                                 <img src="img/جزامات-ومقاعد تخزين12.jpg" alt="جزامة مودرن" onclick="openPopup(this.src)">
                                 <h4>ستيفالي جزامة أحذية خشب طبيعي</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -867,7 +882,7 @@ hr {
                                 <span>14000 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/جزامات-ومقاعد تخزين10-.webp')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in">
+                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in" data-components="img/جزامات/جزامات13/1.jpeg , img/جزامات/جزامات13/2.jpeg , img/جزامات/جزامات13/3.jpeg , img/جزامات/جزامات13/4.jpeg">
                                 <img src="img/جزامات-ومقاعد تخزين13.jpg" alt="جزامة مودرن" onclick="openPopup(this.src)">
                                 <h4>فلوتيلا خزانة أحذية أزرق</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -877,7 +892,7 @@ hr {
                                 <span>8100 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/جزامات-ومقاعد تخزين10-.webp')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in">
+                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in" data-components="img/جزامات/جزامات14/1.jpeg , img/جزامات/جزامات14/2.jpeg , img/جزامات/جزامات14/3.jpeg , img/جزامات/جزامات14/4.jpeg">
                                 <img src="img/جزامات-ومقاعد تخزين14.jpg" alt="جزامة مودرن" onclick="openPopup(this.src)">
                                 <h4>فريا خزانة تخزين أحذية</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -887,7 +902,7 @@ hr {
                                 <span>8200 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/جزامات-ومقاعد تخزين10-.webp')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in">
+                            <div class="product-card" data-category="جزامات ومقاعد تخزين" data-aos="zoom-in" data-components="img/جزامات/جزامات15/1.jpeg , img/جزامات/جزامات15/2.jpeg , img/جزامات/جزامات15/3.jpeg , img/جزامات/جزامات15/4.jpeg , img/جزامات/جزامات15/5.jpeg">
                                 <img src="img/جزامات-ومقاعد تخزين15.jpg" alt="جزامة مودرن" onclick="openPopup(this.src)">
                                 <h4>كالزار جزامة مودرن أبيض وبني</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -1259,7 +1274,7 @@ hr {
     <hr>
     <br>
     <div class="products">
-        <div class="product-card" data-category="صالون" data-aos="zoom-in">
+        <div class="product-card" data-category="صالون" data-aos="zoom-in" data-components="img/صالون/صالون1/صالون1.jpg,img/صالون/صالون1/صالون2.jpg,img/صالون/صالون1/صالون3.jpg,img/صالون/صالون1/صالون4.jpg">
             <img src="img/صالون1.jpg" alt="جزامة" onclick="openPopup(this.src)">
             <h4>صالون كلاسيك ملكي</h4>
             <p>بتصميم عملي وأنيق</p>
@@ -1270,7 +1285,7 @@ hr {
             <span>180.000 ج.م</span>
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/صالون1.jpg')">أضف إلى العربة</a>
         </div>
-        <div class="product-card" data-category="صالون" data-aos="zoom-in">
+        <div class="product-card" data-category="صالون" data-aos="zoom-in" data-components="img/صالون/صالون2/صالون5.jpg,img/صالون/صالون2/صالون6.jpg,img/صالون/صالون2/صالون7.jpg,img/صالون/صالون2/صالون8.jpg,img/صالون/صالون2/صالون9.jpg">
             <img src="img/صالون5.jpg" alt="جزامة" onclick="openPopup(this.src)">
             <h4>Noble Chateau Classic Sofa</h4>
             <p>بتصميم عملي وأنيق</p>
@@ -1281,7 +1296,7 @@ hr {
             <span>222.000 ج.م</span>
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/صالون2.jpg')">أضف إلى العربة</a>
         </div>
-        <div class="product-card" data-category="صالون" data-aos="zoom-in">
+        <div class="product-card" data-category="صالون" data-aos="zoom-in" data-components="img/صالون/صالون5/صالون11.jpg,img/صالون/صالون5/صالون12.jpg,img/صالون/صالون5/صالون13.jpg,img/صالون/صالون5/صالون14.jpg">
             <img src="img/صالون11.jpg" alt="جزامة" onclick="openPopup(this.src)">
             <h4>Renaissance Regal Sofa</h4>
             <p>بتصميم عملي وأنيق</p>
@@ -1292,7 +1307,7 @@ hr {
             <span>188.000 ج.م</span>
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/صالون3.jpg')">أضف إلى العربة</a>
         </div>
-        <div class="product-card" data-category="صالون" data-aos="zoom-in">
+        <div class="product-card" data-category="صالون" data-aos="zoom-in" data-components="img/صالون/صالون3/صالون15.jpg,img/صالون/صالون3/صالون16.jpg,img/صالون/صالون3/صالون17.jpg,img/صالون/صالون3/صالون18.jpg">
             <img src="img/صالون15.jpg" alt="جزامة" onclick="openPopup(this.src)">
             <h4>Majestic Oak Sofa</h4>
             <p>بتصميم عملي وأنيق</p>
@@ -1303,7 +1318,7 @@ hr {
             <span>210.000 ج.م</span>
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/صالون4.jpg')">أضف إلى العربة</a>
         </div>
-        <div class="product-card" data-category="صالون" data-aos="zoom-in">
+        <div class="product-card" data-category="صالون" data-aos="zoom-in" data-components="img/صالون/صالون6/صالون19.jpg,img/صالون/صالون6/صالون20.jpg,img/صالون/صالون6/صالون21.jpg">
             <img src="img/صالون19.jpg" alt="جزامة" onclick="openPopup(this.src)">
             <h4>The Golden Legacy Sofa</h4>
             <p>بتصميم عملي وأنيق</p>
@@ -1314,7 +1329,7 @@ hr {
             <span>176.000 ج.م</span>
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/صالون4.jpg')">أضف إلى العربة</a>
         </div>
-        <div class="product-card" data-category="صالون" data-aos="zoom-in">
+        <div class="product-card" data-category="صالون" data-aos="zoom-in" data-components="img/صالون/صالون4/صالون22.jpeg,img/صالون/صالون4/صالون23.jpeg,img/صالون/صالون4/صالون24.jpeg">
             <img src="img/صالون22.jpeg" alt="جزامة" onclick="openPopup(this.src)">
             <h4>صالون فيرونيكا الكلاسيكي</h4>
             <p>بتصميم عملي وأنيق</p>
@@ -1473,7 +1488,7 @@ hr {
     <hr>
     <br>
     <div class="products">
-        <div class="product-card" data-category="بوفيهات" data-aos="zoom-in">
+        <div class="product-card" data-category="بوفيهات" data-aos="zoom-in" data-components="img/بوفيهات/بوفيهات1/1.jpeg,img/بوفيهات/بوفيهات1/2.jpeg,img/بوفيهات/بوفيهات1/3.jpeg,img/بوفيهات/بوفيهات1/4.jpeg">
             <img src="img/بوفيه1.jpeg" alt="جزامة" onclick="openPopup(this.src)">
             <h4>الورشة خزانة تخزين مطبخ</h4>
             <p>بتصميم عملي وأنيق</p>
@@ -1485,7 +1500,7 @@ hr {
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/بوفيه1.jpeg')">أضف إلى العربة</a>
         </div>
 
-        <div class="product-card" data-category="بوفيهات" data-aos="zoom-in">
+        <div class="product-card" data-category="بوفيهات" data-aos="zoom-in" data-components="img/بوفيهات/بوفيهات2/1.jpeg,img/بوفيهات/بوفيهات2/2.jpeg,img/بوفيهات/بوفيهات2/3.jpeg,img/بوفيهات/بوفيهات2/4.jpeg,img/بوفيهات/بوفيهات2/5.jpeg">
             <img src="img/بوفيه2.jpeg" alt="جزامة" onclick="openPopup(this.src)">
             <h4>ألينا طاولة قابلة للتمدد</h4>
             <p>بتصميم عملي وأنيق</p>
@@ -1497,7 +1512,7 @@ hr {
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/بوفيه2.jpeg')">أضف إلى العربة</a>
         </div>
 
-        <div class="product-card" data-category="بوفيهات" data-aos="zoom-in">
+        <div class="product-card" data-category="بوفيهات" data-aos="zoom-in" data-components="img/بوفيهات/بوفيهات3/1.jpeg,img/بوفيهات/بوفيهات3/2.jpeg,img/بوفيهات/بوفيهات3/3.jpeg,img/بوفيهات/بوفيهات3/4.jpeg">
             <img src="img/بوفيه3.jpeg" alt="جزامة" onclick="openPopup(this.src)">
             <h4>لاكان بوفيه حديث خشب طبيعي</h4>
             <p>بتصميم عملي وأنيق</p>
@@ -1509,7 +1524,7 @@ hr {
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/بوفيه3.jpeg')">أضف إلى العربة</a>
         </div>
 
-        <div class="product-card" data-category="بوفيهات" data-aos="zoom-in">
+        <div class="product-card" data-category="بوفيهات" data-aos="zoom-in" data-components="img/بوفيهات/بوفيهات4/1.jpeg,img/بوفيهات/بوفيهات4/2.jpeg,img/بوفيهات/بوفيهات4/3.jpeg,img/بوفيهات/بوفيهات4/4.jpeg">
             <img src="img/بوفيه4.jpeg" alt="جزامة" onclick="openPopup(this.src)">
             <h4>بوفيه كريدنزا مصنوع من الخشب الطبيعي وأرجل معدنية</h4>
             <p>بتصميم عملي وأنيق</p>
@@ -1521,7 +1536,7 @@ hr {
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/بوفيه4.jpeg')">أضف إلى العربة</a>
         </div>
 
-        <div class="product-card" data-category="بوفيهات" data-aos="zoom-in">
+        <div class="product-card" data-category="بوفيهات" data-aos="zoom-in" data-components="img/بوفيهات/بوفيهات5/1.jpeg,img/بوفيهات/بوفيهات5/2.jpeg,img/بوفيهات/بوفيهات5/3.jpeg,img/بوفيهات/بوفيهات5/4.jpeg">
             <img src="img/بوفيه5.jpeg" alt="جزامة" onclick="openPopup(this.src)">
             <h4>كلامف بوفيه خشب أرجل معدن</h4>
             <p>بتصميم عملي وأنيق</p>
@@ -1533,7 +1548,7 @@ hr {
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/بوفيه5.jpeg')">أضف إلى العربة</a>
         </div>
 
-        <div class="product-card" data-category="بوفيهات" data-aos="zoom-in">
+        <div class="product-card" data-category="بوفيهات" data-aos="zoom-in" data-components="img/بوفيهات/بوفيهات6/1.jpeg,img/بوفيهات/بوفيهات6/2.jpeg,img/بوفيهات/بوفيهات6/3.jpeg,img/بوفيهات/بوفيهات6/4.jpeg">
             <img src="img/بوفيه6.jpeg" alt="جزامة" onclick="openPopup(this.src)">
             <h4>ليكاسا</h4>
             <p>بتصميم عملي وأنيق</p>
@@ -1545,7 +1560,7 @@ hr {
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/بوفيه6.jpeg')">أضف إلى العربة</a>
         </div>
 
-        <div class="product-card" data-category="بوفيهات" data-aos="zoom-in">
+        <div class="product-card" data-category="بوفيهات" data-aos="zoom-in" data-components="img/بوفيهات/بوفيهات7/1.jpeg,img/بوفيهات/بوفيهات7/2.jpeg,img/بوفيهات/بوفيهات7/3.jpeg,img/بوفيهات/بوفيهات7/4.jpeg">
             <img src="img/بوفيه7.jpeg" alt="جزامة" onclick="openPopup(this.src)">
             <h4>لينكا بوفيه خشب طبيعي مع أدراج وأرفف</h4>
             <p>بتصميم عملي وأنيق</p>
@@ -1557,7 +1572,7 @@ hr {
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/بوفيه7.jpeg')">أضف إلى العربة</a>
         </div>
 
-        <div class="product-card" data-category="بوفيهات" data-aos="zoom-in">
+        <div class="product-card" data-category="بوفيهات" data-aos="zoom-in" data-components="img/بوفيهات/بوفيهات8/1.jpeg ,img/بوفيهات/بوفيهات8/2.jpeg,img/بوفيهات/بوفيهات8/3.jpeg,img/بوفيهات/بوفيهات8/4.jpeg,img/بوفيهات/بوفيهات8/5.jpeg">
             <img src="img/بوفيه8.jpeg" alt="جزامة" onclick="openPopup(this.src)">
             <h4>ليسكو بوفيه مع ادراج وأبواب</h4>
             <p>بتصميم عملي وأنيق</p>
@@ -1569,7 +1584,7 @@ hr {
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/بوفيه8.jpeg')">أضف إلى العربة</a>
         </div>
 
-        <div class="product-card" data-category="بوفيهات" data-aos="zoom-in">
+        <div class="product-card" data-category="بوفيهات" data-aos="zoom-in" data-components="img/بوفيهات/بوفيهات9/1.jpeg,img/بوفيهات/بوفيهات9/2.jpeg,img/بوفيهات/بوفيهات9/3.jpeg,img/بوفيهات/بوفيهات9/4.jpeg">
             <img src="img/بوفيه9.jpeg" alt="جزامة" onclick="openPopup(this.src)">
             <h4>رينڤو بوفيه خشب طبيعي</h4>
             <p>بتصميم عملي وأنيق</p>
@@ -1581,7 +1596,7 @@ hr {
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/بوفيه9.jpeg')">أضف إلى العربة</a>
         </div>
 
-        <div class="product-card" data-category="بوفيهات" data-aos="zoom-in">
+        <div class="product-card" data-category="بوفيهات" data-aos="zoom-in" data-components="img/بوفيهات/بوفيهات10/1.jpeg,img/بوفيهات/بوفيهات10/2.jpeg,img/بوفيهات/بوفيهات10/3.jpeg,img/بوفيهات/بوفيهات9/4.jpeg">
             <img src="img/بوفيه10.jpeg" alt="جزامة" onclick="openPopup(this.src)">
             <h4>كلاسي بوفيه خشب طبيعي راتان</h4>
             <p>بتصميم عملي وأنيق</p>
@@ -1732,7 +1747,7 @@ hr {
                         <hr>
                         <br>
                         <div class="products">
-                            <div class="product-card" data-category="انتريه" data-aos="zoom-in">
+                            <div class="product-card" data-category="انتريه" data-aos="zoom-in" data-components="img/انتريه/انتريه3/1.jpeg,img/انتريه/انتريه3/2.jpeg,img/انتريه/انتريه3/3.jpeg,img/انتريه/انتريه3/4.jpeg,img/انتريه/انتريه3/5.jpeg">
                                 <img src="img/كنبة1.jpeg" alt="جزامة" onclick="openPopup(this.src)">
                                 <h4>ركنه سيجال مساند للظهر متحركه</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -1743,7 +1758,7 @@ hr {
                                 <span>53.800 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/كنبة1.jpeg')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="انتريه" data-aos="zoom-in">
+                            <div class="product-card" data-category="انتريه" data-aos="zoom-in" data-components="img/انتريه/انتريه2/1.jpeg,img/انتريه/انتريه2/2.jpeg,img/انتريه/انتريه2/3.jpeg,img/انتريه/انتريه2/4.jpeg">
                                 <img src="img/كنبة2.jpeg" alt="جزامة" onclick="openPopup(this.src)">
                                 <h4>ركنه كرافي</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -1754,7 +1769,7 @@ hr {
                                 <span>43.900 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/كنبة2.jpeg')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="انتريه" data-aos="zoom-in">
+                            <div class="product-card" data-category="انتريه" data-aos="zoom-in" data-components="img/انتريه/انتريه4/1.jpg,img/انتريه/انتريه4/2.jpg,img/انتريه/انتريه4/3.jpg">
                                 <img src="img/كنبة3.jpg" alt="جزامة" onclick="openPopup(this.src)">
                                 <h4>سكايل أريكة مودرن</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -1765,7 +1780,7 @@ hr {
                                 <span>37.000 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/كنبة3.jpg')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="انتريه" data-aos="zoom-in">
+                            <div class="product-card" data-category="انتريه" data-aos="zoom-in" data-components="img/انتريه/انتريه10/1.jpeg,img/انتريه/انتريه10/2.jpeg,img/انتريه/انتريه10/3.jpeg,img/انتريه/انتريه10/4.jpeg">
                                 <img src="img/كنبة4.jpeg" alt="جزامة" onclick="openPopup(this.src)">
                                 <h4>كنبة مودرن جلاموري</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -1776,7 +1791,7 @@ hr {
                                 <span>22.000 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/كنبة4.jpeg')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="انتريه" data-aos="zoom-in">
+                            <div class="product-card" data-category="انتريه" data-aos="zoom-in" data-components="img/انتريه/انتريه5/1.jpeg,img/انتريه/انتريه5/2.jpeg,img/انتريه/انتريه5/3.jpeg,img/انتريه/انتريه5/4.jpeg,img/انتريه/انتريه5/5.jpeg">
                                 <img src="img/كنبة5.jpeg" alt="جزامة" onclick="openPopup(this.src)">
                                 <h4>كنبة إليجانزا</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -1787,7 +1802,7 @@ hr {
                                 <span>41.220 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/كنبة5.jpeg')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="انتريه" data-aos="zoom-in">
+                            <div class="product-card" data-category="انتريه" data-aos="zoom-in" data-components="img/انتريه/انتريه6/1.jpeg,img/انتريه/انتريه6/2.jpeg,img/انتريه/انتريه6/3.jpeg,img/انتريه/انتريه6/4.jpeg">
                                 <img src="img/كنبة6.jpeg" alt="جزامة" onclick="openPopup(this.src)">
                                 <h4>كنبة بلانتوس </h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -1798,7 +1813,7 @@ hr {
                                 <span>40.220 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/كنبة6.jpeg')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="انتريه" data-aos="zoom-in">
+                            <div class="product-card" data-category="انتريه" data-aos="zoom-in" data-components="img/انتريه/انتريه8/1.jpeg,img/انتريه/انتريه8/2.jpeg,img/انتريه/انتريه8/3.jpeg,img/انتريه/انتريه8/4.jpeg,img/انتريه/انتريه8/5.jpeg">
                                 <img src="img/كنبة7.jpeg" alt="جزامة" onclick="openPopup(this.src)">
                                 <h4>كنبة تيدي</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -1809,7 +1824,7 @@ hr {
                                 <span>37.500 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/كنبة7.jpeg')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="انتريه" data-aos="zoom-in">
+                            <div class="product-card" data-category="انتريه" data-aos="zoom-in" data-components="img/انتريه/انتريه7/1.jpeg,img/انتريه/انتريه7/2.jpeg,img/انتريه/انتريه7/3.jpeg,img/انتريه/انتريه7/4.jpeg,img/انتريه/انتريه7/5.jpeg">
                                 <img src="img/كنبة8.jpeg" alt="جزامة" onclick="openPopup(this.src)">
                                 <h4>كنبة كومفي</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -1820,7 +1835,7 @@ hr {
                                 <span>35.000 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/كنبة8.jpeg')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="انتريه" data-aos="zoom-in">
+                            <div class="product-card" data-category="انتريه" data-aos="zoom-in" data-components="img/انتريه/انتريه9/1.jpeg,img/انتريه/انتريه9/2.jpeg,img/انتريه/انتريه9/3.jpeg,img/انتريه/انتريه9/4.jpeg,img/انتريه/انتريه9/5.jpeg">
                                 <img src="img/كنبة9.jpeg" alt="جزامة" onclick="openPopup(this.src)">
                                 <h4>كنبة مودرن كرامي</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -1831,7 +1846,7 @@ hr {
                                 <span>23.200 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/كنبة9.jpeg')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="انتريه" data-aos="zoom-in">
+                            <div class="product-card" data-category="انتريه" data-aos="zoom-in" data-components="img/انتريه/انتريه1/1.jpg,img/انتريه/انتريه1/2.jpg,img/انتريه/انتريه1/3.jpg,img/انتريه/انتريه1/4.jpg">
                                 <img src="img/كنبة10.jpg" alt="جزامة" onclick="openPopup(this.src)">
                                 <h4>ألتو انتريه مودرن بالوان جذابة</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -1873,7 +1888,7 @@ hr {
                                 <span>8500 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/كوفي-كورنر2.jpg')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="كوفي كورنر" data-aos="zoom-in">
+                            <div class="product-card" data-category="كوفي كورنر" data-aos="zoom-in" data-components="img/كوفي كورنر/كوفي كورنر1/1.jpg,img/كوفي كورنر/كوفي كورنر1/2.jpg,img/كوفي كورنر/كوفي كورنر1/3.jpg,img/كوفي كورنر/كوفي كورنر1/4.jpg">
                                 <img src="img/كوفي-كورنر3.jpg" alt="جزامة" onclick="openPopup(this.src)">
                                 <h4>ركن القهوة تريو أسود وبني</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -1884,7 +1899,7 @@ hr {
                                 <span>9400 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/كوفي-كورنر3.jpg')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="كوفي كورنر" data-aos="zoom-in">
+                            <div class="product-card" data-category="كوفي كورنر" data-aos="zoom-in" data-components="img/كوفي كورنر/كوفي كورنر1/1.jpg,img/كوفي كورنر/كوفي كورنر1/2.jpg,img/كوفي كورنر/كوفي كورنر1/3.jpg,img/كوفي كورنر/كوفي كورنر1/4.jpg">
                                 <img src="img/كوفي-كورنر4.jpg" alt="جزامة" onclick="openPopup(this.src)">
                                 <h4>ركن القهوة تريو أسود وبني</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -1895,7 +1910,7 @@ hr {
                                 <span>9400 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/كوفي-كورنر4.jpg')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="كوفي كورنر" data-aos="zoom-in">
+                            <div class="product-card" data-category="كوفي كورنر" data-aos="zoom-in" data-components="img/كوفي كورنر/كوفي كورنر2/1.jpg,img/كوفي كورنر/كوفي كورنر2/2.jpg,img/كوفي كورنر/كوفي كورنر2/3.jpg">
                                 <img src="img/كوفي-كورنر5.jpg" alt="جزامة" onclick="openPopup(this.src)">
                                 <h4>ركنة قهوة ستيلا طبقة ميلامين أبيض</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -1906,7 +1921,7 @@ hr {
                                 <span>8000 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/كوفي-كورنر5.jpg')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="كوفي كورنر" data-aos="zoom-in">
+                            <div class="product-card" data-category="كوفي كورنر" data-aos="zoom-in" data-components="img/كوفي كورنر/كوفي كورنر2/1.jpg,img/كوفي كورنر/كوفي كورنر2/2.jpg,img/كوفي كورنر/كوفي كورنر2/3.jpg">
                                 <img src="img/كوفي-كورنر6.jpg" alt="جزامة" onclick="openPopup(this.src)">
                                 <h4>ركنة قهوة ستيلا طبقة ميلامين أبيض</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -1917,7 +1932,7 @@ hr {
                                 <span>8000 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/كوفي-كورنر6.jpg')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="كوفي كورنر" data-aos="zoom-in">
+                            <div class="product-card" data-category="كوفي كورنر" data-aos="zoom-in" data-components="img/كوفي كورنر/كوفي كورنر3/1.jpg,img/كوفي كورنر/كوفي كورنر3/2.jpg,img/كوفي كورنر/كوفي كورنر3/3.jpg,img/كوفي كورنر/كوفي كورنر3/4.jpg">
                                 <img src="img/كوفي-كورنر7.jpg" alt="جزامة" onclick="openPopup(this.src)">
                                 <h4>جكنة قهوة لينيا أبيض</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -1928,7 +1943,7 @@ hr {
                                 <span>9100 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/كوفي-كورنر7.jpg')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="كوفي كورنر" data-aos="zoom-in">
+                            <div class="product-card" data-category="كوفي كورنر" data-aos="zoom-in" data-components="img/كوفي كورنر/كوفي كورنر3/1.jpg,img/كوفي كورنر/كوفي كورنر3/2.jpg,img/كوفي كورنر/كوفي كورنر3/3.jpg,img/كوفي كورنر/كوفي كورنر3/4.jpg">
                                 <img src="img/كوفي-كورنر8.jpg" alt="جزامة" onclick="openPopup(this.src)">
                                 <h4>كنة قهوة لينيا أبيض</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -1939,7 +1954,7 @@ hr {
                                 <span>9100 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/كوفي-كورنر8.jpg')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="كوفي كورنر" data-aos="zoom-in">
+                            <div class="product-card" data-category="كوفي كورنر" data-aos="zoom-in" data-components="img/كوفي كورنر/كوفي كورنر4/ركنة-القهوة-ريفيرا-بني2.jpg ,img/كوفي كورنر/كوفي كورنر4/ركنة-القهوة-ريفيرا-بني.jpg ">
                                 <img src="img/كوفي-كورنر9.jpg" alt="جزامة" onclick="openPopup(this.src)">
                                 <h4>ركنة القهوة ريفيرا بني</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -1950,7 +1965,7 @@ hr {
                                 <span>10220 ج.م</span>
                                 <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/كوفي-كورنر9.jpg')">أضف إلى العربة</a>
                             </div>
-                            <div class="product-card" data-category="كوفي كورنر" data-aos="zoom-in">
+                            <div class="product-card" data-category="كوفي كورنر" data-aos="zoom-in" >
                                 <img src="img/كوفي-كورنر10.jpg" alt="جزامة" onclick="openPopup(this.src)">
                                 <h4>كوفي-كورنر خشبي</h4>
                                 <p>بتصميم عملي وأنيق</p>
@@ -1971,31 +1986,31 @@ hr {
                             <br>
                             <div class="products">
 
-                                <div class="product-card" data-category="دواليب اكسسوارات ومجوهرات" data-aos="zoom-in">
+                                <div class="product-card" data-category="دواليب اكسسوارات ومجوهرات" data-aos="zoom-in" data-components="img/دواليب اكسسوارات/اكسسوارت1/1.jpeg,img/دواليب اكسسوارات/اكسسوارت1/2.jpeg,img/دواليب اكسسوارات/اكسسوارت1/3.jpeg,img/دواليب اكسسوارات/اكسسوارت1/4.jpeg">
                                     <img src="img/دولاب-اكسسوار1.jpeg" alt="جزامة" onclick="openPopup(this.src)">
-                                    <h4>جزامة مودرن</h4>
+                                    <h4> دولاب مجوهرات خشبي </h4>
                                     <p>بتصميم عملي وأنيق</p>
                                     <div class="price-section">
-                                        <span class="old-price">7200 ج.م</span>
-                                        <span class="new-price">1450 ج.م</span>
+                                        <span class="old-price">13.200 ج.م</span>
+                                        <span class="new-price">10.250 ج.م</span>
                                     </div>
                                     <span>1450 ج.م</span>
                                     <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/دولاب-اكسسوار1.jpeg')">أضف إلى العربة</a>
                                 </div>
 
-                                <div class="product-card" data-category="دواليب اكسسوارات ومجوهرات" data-aos="zoom-in">
+                                <div class="product-card" data-category="دواليب اكسسوارات ومجوهرات" data-aos="zoom-in" data-components="img/دواليب اكسسوارات/اكسسوارت2/1.jpeg,img/دواليب اكسسوارات/اكسسوارت2/2.jpeg,img/دواليب اكسسوارات/اكسسوارت2/3.jpeg,img/دواليب اكسسوارات/اكسسوارت2/4.jpeg">
                                     <img src="img/دولاب-اكسسوار2.jpeg" alt="جزامة" onclick="openPopup(this.src)">
                                     <h4>دولاب مجوهرات كويمورا مع مرآة</h4>
                                     <p>بتصميم عملي وأنيق</p>
                                     <div class="price-section">
-                                        <span class="old-price">7200 ج.م</span>
+                                        <span class="old-price">15.600 ج.م</span>
                                         <span class="new-price">12400 ج.م</span>
                                     </div>
                                     <span>12400 ج.م</span>
                                     <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/دولاب-اكسسوار2.jpeg')">أضف إلى العربة</a>
                                 </div>
 
-                                <div class="product-card" data-category="دواليب اكسسوارات ومجوهرات" data-aos="zoom-in">
+                                <div class="product-card" data-category="دواليب اكسسوارات ومجوهرات" data-aos="zoom-in" data-components="img/دواليب اكسسوارات/اكسسوارت3/1.jpeg,img/دواليب اكسسوارات/اكسسوارت3/2.jpeg,img/دواليب اكسسوارات/اكسسوارت3/3.png,img/دواليب اكسسوارات/اكسسوارت3/4.png">
                                     <img src="img/دولاب-اكسسوار3.jpeg" alt="جزامة" onclick="openPopup(this.src)">
                                     <h4>لورديانا خزانة المجوهرات والمرآة كاملة</h4>
                                     <p>بتصميم عملي وأنيق</p>
@@ -2007,31 +2022,31 @@ hr {
                                     <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/دولاب-اكسسوار3.jpeg')">أضف إلى العربة</a>
                                 </div>
 
-                                <div class="product-card" data-category="دواليب اكسسوارات ومجوهرات" data-aos="zoom-in">
+                                <div class="product-card" data-category="دواليب اكسسوارات ومجوهرات" data-aos="zoom-in" data-components="img/دواليب اكسسوارات/اكسسوارت4/1.jpeg,img/دواليب اكسسوارات/اكسسوارت4/2.jpeg,img/دواليب اكسسوارات/اكسسوارت4/3.jpeg,img/دواليب اكسسوارات/اكسسوارت4/4.jpeg">
                                     <img src="img/دولاب-اكسسوار4.jpeg" alt="جزامة" onclick="openPopup(this.src)">
-                                    <h4>جزامة مودرن</h4>
+                                    <h4> دولاب مجوهرات ابيض اللون</h4>
                                     <p>بتصميم عملي وأنيق</p>
                                     <div class="price-section">
-                                        <span class="old-price">7200 ج.م</span>
-                                        <span class="new-price">1450 ج.م</span>
+                                        <span class="old-price">11.350 ج.م</span>
+                                        <span class="new-price">9.500 ج.م</span>
                                     </div>
-                                    <span>1450 ج.م</span>
+                                    <span>9500 ج.م</span>
                                     <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/دولاب-اكسسوار4.jpeg')">أضف إلى العربة</a>
                                 </div>
 
-                                <div class="product-card" data-category="دواليب اكسسوارات ومجوهرات" data-aos="zoom-in">
+                                <div class="product-card" data-category="دواليب اكسسوارات ومجوهرات" data-aos="zoom-in" data-components="img/دواليب اكسسوارات/اكسسوارت5/1.jpeg,img/دواليب اكسسوارات/اكسسوارت5/2.jpeg,img/دواليب اكسسوارات/اكسسوارت5/3.jpeg,img/دواليب اكسسوارات/اكسسوارت5/4.jpeg">
                                     <img src="img/دولاب-اكسسوار5.jpeg" alt="جزامة" onclick=" openPopup(this.src)">
-                                    <h4>جزامة مودرن</h4>
+                                    <h4> زاوية الاكسسوارات الحديثة</h4>
                                     <p>بتصميم عملي وأنيق</p>
                                     <div class="price-section">
-                                        <span class="old-price">7200 ج.م</span>
-                                        <span class="new-price">1450 ج.م</span>
+                                        <span class="old-price">13600 ج.م</span>
+                                        <span class="new-price">10250 ج.م</span>
                                     </div>
-                                    <span>1450 ج.م</span>
+                                    <span>10.250 ج.م</span>
                                     <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/دولاب-اكسسوار5.jpeg')">أضف إلى العربة</a>
                                 </div>
 
-                                <div class="product-card" data-category="دواليب اكسسوارات ومجوهرات" data-aos="zoom-in">
+                                <div class="product-card" data-category="دواليب اكسسوارات ومجوهرات" data-aos="zoom-in" data-components="img/دواليب اكسسوارات/اكسسوارت6/1.jpeg , img/دواليب اكسسوارات/اكسسوارت6/2.jpeg">
                                     <img src="img/دولاب-اكسسوار6.jpeg" alt="جزامة" onclick=" openPopup(this.src)">
                                     <h4>نيروزا خزانة مجوهرات ومرأة بتصميم عصري مبتكر</h4>
                                     <p>بتصميم عملي وأنيق</p>
@@ -2043,7 +2058,7 @@ hr {
                                     <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/دولاب-اكسسوار6.jpeg')">أضف إلى العربة</a>
                                 </div>
 
-                                <div class="product-card" data-category="دواليب اكسسوارات ومجوهرات" data-aos="zoom-in">
+                                <div class="product-card" data-category="دواليب اكسسوارات ومجوهرات" data-aos="zoom-in" data-components="img/دواليب اكسسوارات/اكسسوارت7/1.jpeg,img/دواليب اكسسوارات/اكسسوارت7/2.jpeg,img/دواليب اكسسوارات/اكسسوارت7/3.jpeg,img/دواليب اكسسوارات/اكسسوارت7/4.jpeg">
                                     <img src="img/دولاب-اكسسوار7.jpeg" alt="جزامة" onclick="openPopup(this.src)">
                                     <h4>مادونا خزانة مجوهرات مع مرآة بتصميم عصري وإضاءة</h4>
                                     <p>بتصميم عملي وأنيق</p>
@@ -2055,31 +2070,31 @@ hr {
                                     <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/دولاب-اكسسوار7.jpeg')">أضف إلى العربة</a>
                                 </div>
 
-                                <div class="product-card" data-category="دواليب اكسسوارات ومجوهرات" data-aos="zoom-in">
+                                <div class="product-card" data-category="دواليب اكسسوارات ومجوهرات" data-aos="zoom-in" data-components="img/دواليب اكسسوارات/اكسسوارت8/1.jpeg,img/دواليب اكسسوارات/اكسسوارت8/2.jpeg,img/دواليب اكسسوارات/اكسسوارت8/3.jpeg,img/دواليب اكسسوارات/اكسسوارت8/4.jpeg">
                                     <img src="img/دولاب-اكسسوار8.jpeg" alt="جزامة" onclick="openPopup(this.src)">
                                     <h4>لورديانا خزانة المجوهرات والمرآة كاملة</h4>
                                     <p>بتصميم عملي وأنيق</p>
                                     <div class="price-section">
-                                        <span class="old-price">7200 ج.م</span>
-                                        <span class="new-price">8450 ج.م</span>
+                                        <span class="old-price">14.800 ج.م</span>
+                                        <span class="new-price">10.100 ج.م</span>
                                     </div>
-                                    <span>8450 ج.م</span>
+                                    <span>10.100 ج.م</span>
                                     <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/دولاب-اكسسوار8.jpeg')">أضف إلى العربة</a>
                                 </div>
 
-                                <div class="product-card" data-category="دواليب اكسسوارات ومجوهرات" data-aos="zoom-in">
+                                <div class="product-card" data-category="دواليب اكسسوارات ومجوهرات" data-aos="zoom-in" data-components="img/دواليب اكسسوارات/اكسسوارت9/1.jpeg,img/دواليب اكسسوارات/اكسسوارت9/2.jpeg,img/دواليب اكسسوارات/اكسسوارت9/3.jpeg">
                                     <img src="img/دولاب-اكسسوار9.jpeg" alt="جزامة" onclick="openPopup(this.src)">
                                     <h4>خزانة مجوهرات وستاند</h4>
                                     <p>بتصميم عملي وأنيق</p>
                                     <div class="price-section">
-                                        <span class="old-price">7200 ج.م</span>
-                                        <span class="new-price">1450 ج.م</span>
+                                        <span class="old-price">14.900 ج.م</span>
+                                        <span class="new-price">12.100 ج.م</span>
                                     </div>
-                                    <span>1450 ج.م</span>
+                                    <span>12.100 ج.م</span>
                                     <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/دولاب-اكسسوار9.jpeg')">أضف إلى العربة</a>
                                 </div>
 
-                                <div class="product-card" data-category="دواليب اكسسوارات ومجوهرات" data-aos="zoom-in">
+                                <div class="product-card" data-category="دواليب اكسسوارات ومجوهرات" data-aos="zoom-in" data-components="img/دواليب اكسسوارات/اكسسوارت10/1.jpeg,img/دواليب اكسسوارات/اكسسوارت10/2.jpeg,img/دواليب اكسسوارات/اكسسوارت10/3.jpeg,img/دواليب اكسسوارات/اكسسوارت10/4.jpeg">
                                     <img src="img/دولاب-اكسسوار10.jpeg" alt="جزامة" onclick="openPopup(this.src)">
                                     <h4>لوكسراس خزانة اكسسوارات مجوهرات ومرايا ستاند</h4>
                                     <p>بتصميم عملي وأنيق</p>
@@ -2105,7 +2120,7 @@ hr {
     <br>
     <div class="products">
         
-        <div class="product-card" data-category="منظم كتب" data-aos="zoom-in">
+        <div class="product-card" data-category="منظم كتب" data-aos="zoom-in" data-components="img/منظم كتب/منظم1/1.jpeg,img/منظم كتب/منظم1/2.jpeg,img/منظم كتب/منظم1/3.jpeg,img/منظم كتب/منظم1/4.jpeg">
             <img src="img/منظم-كتب3.jpeg" alt="جزامة" onclick="openPopup(this.src)">
             <h4>خزانة كتب ابيض اللون</h4>
             <p>بتصميم عملي وأنيق</p>
@@ -2116,7 +2131,7 @@ hr {
             <span>7300 ج.م</span>
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/صالون3.jpg')">أضف إلى العربة</a>
         </div>
-        <div class="product-card" data-category="منظم كتب" data-aos="zoom-in">
+        <div class="product-card" data-category="منظم كتب" data-aos="zoom-in" data-components="img/منظم كتب/منظم2/1.jpeg,img/منظم كتب/منظم2/2.jpeg,img/منظم كتب/منظم2/3.jpeg,img/منظم كتب/منظم2/4.jpeg">
             <img src="img/منظم-كتب4.jpeg" alt="جزامة" onclick="openPopup(this.src)">
             <h4>شيري مكتبة كتب بتصميم هندسي
             </h4>
@@ -2128,7 +2143,7 @@ hr {
             <span>5600 ج.م</span>
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/صالون4.jpg')">أضف إلى العربة</a>
         </div>
-        <div class="product-card" data-category="منظم كتب" data-aos="zoom-in">
+        <div class="product-card" data-category="منظم كتب" data-aos="zoom-in" data-components="img/منظم كتب/منظم3/1.webp,img/منظم كتب/منظم3/2.webp,img/منظم كتب/منظم3/3.webp,img/منظم كتب/منظم3/4.webp">
             <img src="img/منظم-كتب5.webp" alt="جزامة" onclick="openPopup(this.src)">
             <h4>خزانة كتب بيكانتو مع 4 أرفف - خشب طبيعى
             </h4>
@@ -2140,7 +2155,7 @@ hr {
             <span>176.000 ج.م</span>
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/صالون4.jpg')">أضف إلى العربة</a>
         </div>
-        <div class="product-card" data-category="منظم كتب" data-aos="zoom-in">
+        <div class="product-card" data-category="منظم كتب" data-aos="zoom-in" data-components="img/منظم كتب/منظم4/1.webp,img/منظم كتب/منظم4/2.webp,img/منظم كتب/منظم4/3.webp,img/منظم كتب/منظم4/4.webp">
             <img src="img/منظم-كتب6.webp" alt="جزامة" onclick="openPopup(this.src)">
             <h4>خزانة الكتب مورا مع أرفف و أدراج - خشب طبيعى.
             </h4>
@@ -2152,7 +2167,7 @@ hr {
             <span>28.500 ج.م</span>
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/صالون4.jpg')">أضف إلى العربة</a>
         </div>
-        <div class="product-card" data-category="منظم كتب" data-aos="zoom-in">
+        <div class="product-card" data-category="منظم كتب" data-aos="zoom-in" data-components="img/منظم كتب/منظم5/1.webp,img/منظم كتب/منظم5/2.webp,img/منظم كتب/منظم5/3.webp,img/منظم كتب/منظم5/4.webp">
             <img src="img/منظم-كتب7.webp" alt="جزامة" onclick="openPopup(this.src)">
             <h4>موانا خزانه كتب مع رف خشبي و اماكن تخزين - خشب طبيعى
             </h4>
@@ -2164,7 +2179,7 @@ hr {
             <span>9500 ج.م</span>
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/صالون4.jpg')">أضف إلى العربة</a>
         </div>
-        <div class="product-card" data-category="منظم كتب" data-aos="zoom-in">
+        <div class="product-card" data-category="منظم كتب" data-aos="zoom-in" data-components="img/منظم كتب/منظم6/1.webp,img/منظم كتب/منظم6/2.webp,img/منظم كتب/منظم6/3.webp,img/منظم كتب/منظم6/4.webp">
             <img src="img/منظم-كتب8.webp" alt="جزامة" onclick="openPopup(this.src)">
             <h4>خزانة الكتب أنجل - خشب طبيعى
             </h4>
@@ -2176,7 +2191,7 @@ hr {
             <span>6300 ج.م</span>
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/صالون4.jpg')">أضف إلى العربة</a>
         </div>
-        <div class="product-card" data-category="منظم كتب" data-aos="zoom-in">
+        <div class="product-card" data-category="منظم كتب" data-aos="zoom-in" data-components="img/منظم كتب/منظم7/1.webp,img/منظم كتب/منظم7/2.webp,img/منظم كتب/منظم7/3.webp,img/منظم كتب/منظم7/4.webp">
             <img src="img/منظم-كتب9.webp" alt="جزامة" onclick="openPopup(this.src)">
             <h4>خزانة كتب اورينتال مع ضلفتين و أرفف و درج - خشب طبيعى</h4>
             <p>بتصميم عملي وأنيق</p>
@@ -2187,7 +2202,7 @@ hr {
             <span>16.800 ج.م</span>
             <a href="#" class="whatsapp-btn" onclick="addToCart('جزامة مودرن', 1450,'img/صالون4.jpg')">أضف إلى العربة</a>
         </div>
-        <div class="product-card" data-category="منظم كتب" data-aos="zoom-in">
+        <div class="product-card" data-category="منظم كتب" data-aos="zoom-in" data-components="img/منظم كتب/منظم8/1.webp,img/منظم كتب/منظم8/2.webp,img/منظم كتب/منظم8/3.webp,img/منظم كتب/منظم8/4.webp,img/منظم كتب/منظم8/5.webp"> 
             <img src="img/منظم-كتب10.webp" alt="جزامة" onclick="openPopup(this.src)">
             <h4>خزانه كتب مصنوعه من الخشب الطبيعى </h4>
             <p>بتصميم عملي وأنيق</p>
@@ -2384,6 +2399,53 @@ hr {
             modal.style.display = "none";
         }
     };
+
+    /************************************/
+      document.getElementById("applyFilters").addEventListener("click", filterAndSortProducts);
+        document.getElementById("sortSelect").addEventListener("change", filterAndSortProducts);
+
+        function parsePrice(text) {
+            // تحويل السعر مثل "23.000 ج.م" إلى 23000
+            return parseFloat(text.replace(/[^\d.]/g, "").replace('.', '')) || 0;
+        }
+
+        function filterAndSortProducts() {
+            const maxPriceInput = document.getElementById("priceInput").value;
+            const maxPrice = maxPriceInput ? parseInt(maxPriceInput) : Infinity;
+            const sortOrder = document.getElementById("sortSelect").value;
+
+            const productCards = Array.from(document.querySelectorAll(".product-card"));
+
+            productCards.forEach(card => {
+                const priceSpan = card.querySelector(".new-price");
+                const fallbackPriceSpan = card.querySelector(".price-section + span");
+                let priceText = priceSpan ? priceSpan.textContent : (fallbackPriceSpan ? fallbackPriceSpan.textContent : "0");
+                const price = parsePrice(priceText);
+
+                // إظهار أو إخفاء المنتج بناءً على السعر الأقصى
+                if (price <= maxPrice) {
+                    card.style.display = "block";
+                    card.setAttribute("data-price", price); // نضيف السعر لتسهيل الفرز
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            // ترتيب العناصر المرئية فقط
+            const visibleCards = productCards.filter(card => card.style.display !== "none");
+
+            if (sortOrder === "asc") {
+                visibleCards.sort((a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price));
+            } else if (sortOrder === "desc") {
+                visibleCards.sort((a, b) => parseFloat(b.dataset.price) - parseFloat(a.dataset.price));
+            }
+
+            // إعادة ترتيب العناصر داخل القسم
+            const productsContainer = document.querySelector(".products");
+            visibleCards.forEach(card => {
+                productsContainer.appendChild(card);
+            });
+        }
     </script>
 
 </body>
