@@ -299,19 +299,15 @@ hr {
   color: #e74c3c;
 }
 
-/* ميديا كويري للأجهزة اللوحية (تابلت) */
 @media (max-width: 767px) {
   .product-card {
     flex: 0 0 calc(100% / 4 - 20px);
-    /* 4 منتجات في الصف */
   }
 }
 
-/* ميديا كويري للموبايل */
 @media (max-width: 480px) {
   .product-card {
     flex: 0 0 calc(100% / 2 - 20px);
-    /* 2 في الصف */
   }
 }
 
