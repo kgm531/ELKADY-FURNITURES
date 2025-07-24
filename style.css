@@ -103,7 +103,9 @@ header {
   color: white;
   font-size: 24px;
   cursor: pointer;
-  /* يظهر فقط في الجوال */
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .menu-toggle h5 {
@@ -112,7 +114,6 @@ header {
   display: inline-block;
 }
 
-/* ------------------- Dropdown Menu ------------------- */
 .dropdown {
   display: none;
   position: absolute;
@@ -126,9 +127,9 @@ header {
   z-index: 1000;
 }
 
-.menu-container.open .dropdown {
+/* 🟡 الجديد: إظهار القائمة عند تمرير الماوس */
+.menu-container:hover .dropdown {
   display: block;
-  /* تظهر فقط عند إضافة الكلاس open */
 }
 
 .dropdown li a {
@@ -144,20 +145,10 @@ header {
   color: #3e3e3e;
 }
 
-
-/* ------------------- Responsive ------------------- */
+/* Responsive */
 @media (max-width: 768px) {
-  
-
-  .menu-toggle {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
   .dropdown {
     position: static;
-    /* لإظهار القائمة المنسدلة تحت الزر */
     width: 100%;
     border-radius: 0;
     box-shadow: none;
@@ -168,6 +159,7 @@ header {
     border-top: 1px solid #555;
   }
 }
+
 
 /* العنوان */
 .section-title {
@@ -212,54 +204,51 @@ header {
   margin: 10px 0;
 }
 
-/* الخط الفاصل */
+/* تنسيق الخط الأفقي بين الأقسام */
 hr {
   border: 1px solid #ccc;
   width: 80%;
   margin: 10px 0;
 }
 
-/* شبكة المنتجات */
+/* تنسيق المنتجات */
 .products {
-  display: flex;
+  display:flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
   margin-bottom: 40px;
 }
 
-/* البطاقة الخاصة بكل منتج */
+/* تنسيق البطاقة الخاصة بكل منتج */
 .product-card {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  width: 250px;
   text-align: center;
   padding: 20px;
   transition: transform 0.3s ease-in-out;
-  flex: 0 0 calc(100% / 6 - 20px);
-  /* 6 منتجات في كل صف (على الشاشات الكبيرة) */
-  box-sizing: border-box;
 }
 
-/* تأثير عند مرور الفأرة */
+/* تأثير عند مرور الفأرة على المنتج */
 .product-card:hover {
   transform: scale(1.05);
 }
 
-/* صورة المنتج */
+/* تنسيق الصورة داخل المنتج */
 .product-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
   border-radius: 8px;
 }
-
 /* شريط التخفيض */
 .discount-banner {
   position: absolute;
   top: -1px;
-  left: 0;
+  left: 0px;
   background-color: #333;
   color: #f7c35f;
   font-size: 15px;
@@ -268,21 +257,22 @@ hr {
   z-index: 10;
 }
 
-/* عنوان المنتج */
+
+/* تنسيق العنوان داخل المنتج */
 .product-card h4 {
   font-size: 18px;
   color: #333;
   margin: 15px 0;
 }
 
-/* وصف المنتج */
+/* تنسيق الوصف داخل المنتج */
 .product-card p {
   font-size: 14px;
   color: #777;
   margin-bottom: 10px;
 }
 
-/* السعر */
+/* تنسيق السعر */
 .price-section {
   margin-bottom: 15px;
 }
@@ -297,18 +287,6 @@ hr {
   font-size: 18px;
   font-weight: bold;
   color: #e74c3c;
-}
-
-@media (max-width: 767px) {
-  .product-card {
-    flex: 0 0 calc(100% / 4 - 20px);
-  }
-}
-
-@media (max-width: 480px) {
-  .product-card {
-    flex: 0 0 calc(100% / 2 - 20px);
-  }
 }
 
 /* تنسيق زر واتساب */
@@ -330,6 +308,18 @@ hr {
 
 /* تنسيق لأجهزة الجوال */
 @media screen and (max-width: 768px) {
+  .products {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 90%;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
 
   .whatsapp-btn {
     padding: 8px 16px;
@@ -337,88 +327,111 @@ hr {
 }
 
 
+/*caption*/
+.offer-banner {
+      background: linear-gradient(135deg, #ff5f6d, #ffc371);
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+      border-radius: 12px;
+      max-width: 800px;
+      margin: 50px auto;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      animation: pulse 2s infinite;
+    }
+
+    .offer-banner h1 {
+      font-size: 2em;
+      margin: 0 0 10px;
+    }
+
+    .offer-banner p {
+      font-size: 1.2em;
+      margin: 0;
+      color: #000;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+
+
 /* Testimonials Slider */
 .testimonials-slider {
+  padding: 40px 20px;
   background: #f9f9f9;
-  padding: 60px 20px;
   text-align: center;
-}
-
-.testimonials-slider .section-title {
-  font-size: 32px;
-  margin-bottom: 30px;
-  color: #333;
 }
 
 .slider {
   position: relative;
-  max-width: 700px;
+  max-width: 600px;
   margin: auto;
   overflow: hidden;
 }
 
 .slides {
   display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 .slide {
-  min-width: 100%;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  flex: 0 0 100%;
+  display: none; /* مهم لإخفاء الشرائح غير النشطة */
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
 }
 
 .slide.active {
-  opacity: 1;
+  display: flex; /* تظهر الشريحة النشطة */
 }
 
 .testimonial-card {
   background: #fff;
+  border-radius: 10px;
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  direction: rtl;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
-.testimonial-card .avatar {
+.avatar {
+  border-radius: 50%;
   width: 80px;
   height: 80px;
-  border-radius: 50%;
-  margin-bottom: 15px;
+  object-fit: cover;
 }
 
 .testimonial-text {
-  font-size: 18px;
-  color: #555;
+  font-size: 16px;
   margin: 15px 0;
+  color: #333;
 }
 
 .stars {
-  color: #f4c150;
-  font-size: 20px;
+  font-size: 18px;
+  color: gold;
   margin-bottom: 10px;
 }
 
 .client-name {
   font-weight: bold;
-  color: #333;
+  color: #555;
 }
 
 .slider-nav {
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: #666;
+  cursor: pointer;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.3);
-  color: #fff;
-  border: none;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 20px;
-  transition: background 0.3s ease;
-}
-
-.slider-nav:hover {
-  background: rgba(0,0,0,0.6);
 }
 
 .slider-nav.prev {
@@ -429,24 +442,6 @@ hr {
   right: 10px;
 }
 
-.dots {
-  margin-top: 20px;
-}
-
-.dot {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin: 0 5px;
-  background: #ddd;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.dot.active {
-  background: #ec5e8e;
-}
 
 /*footer*/
 
@@ -1048,7 +1043,7 @@ hr {
   .poster h1 {
     font-size: 1.8rem;
     /* حجم الخط يعادل 28px */
-    margin-top: -15px;
+    margin-top: -140px;
     padding: 5px 20px;
   }
 
@@ -1069,7 +1064,7 @@ hr {
   .poster h1 {
     font-size: 1.5rem;
     /* حجم الخط يعادل 24px */
-    margin-top: -15px;
+    margin-top: -120px;
     padding: 5px 15px;
   }
 
@@ -1390,6 +1385,8 @@ hr {
 }
 
 
+
+
 /* أزرار التنقل */
 
 
@@ -1451,38 +1448,4 @@ max-height: 250PX;
 
   
   
-}
-
-.filter-sort-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-  margin: 20px 0;
-  direction: rtl;
-}
-
-.filter-sort-bar label {
-  font-weight: bold;
-}
-
-.filter-sort-bar input,
-.filter-sort-bar select {
-  padding: 6px 10px;
-  font-size: 14px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-#applyFilters {
-  padding: 8px 16px;
-  background-color: #f7c35f;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-#applyFilters:hover {
-  background-color: #e6af30;
 }
