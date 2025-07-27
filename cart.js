@@ -102,7 +102,7 @@ function sendOrderToWhatsApp() {
     let totalPrice = cart.reduce((total, item) => total + item.price, 0);
     message += `🧮 المجموع الكلي: ${totalPrice} جنية`;
 
-    let phoneNumber = '201225406810';
+    let phoneNumber = '201559097051';
     let encodedMessage = encodeURIComponent(message);
     let url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
