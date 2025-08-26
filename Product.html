@@ -547,7 +547,6 @@ hr {
     <input type="number" id="minPrice" placeholder="أقل سعر" min="0">
     <input type="number" id="maxPrice" placeholder="أعلى سعر" min="0">
 
-    <button onclick="applyFilter()">تطبيق الفلترة</button>
 </div>
 
         <!-- المنتجات -->
@@ -3073,237 +3072,201 @@ hr {
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="cart.js"></script>
 
-    <script>
-        AOS.init({ duration: 1000, once: true });
+<script>
+    /* ============================
+       تهيئة مكتبة AOS (أنيميشن عند التمرير)
+    ============================ */
+    AOS.init({ duration: 1000, once: true });
 
-        const filterButtons = document.querySelectorAll('.filter-btn');
-            const productSections = document.querySelectorAll('.products-section');
+    /* ============================
+       كتابة متحركة للعنوان (Typing Effect)
+    ============================ */
+    (() => {
+        const phrases = ["المنتجات", "ELKADY FURNITURES"];
+        let phraseIndex = 0, letterIndex = 0;
+        const typingSpeed = 150, erasingSpeed = 80, delayBetweenPhrases = 1200;
+        const typingElement = document.getElementById("typing");
 
-            // إضافة حدث عند الضغط على الأزرار
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // إزالة التفعيل عن جميع الأزرار
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-
-                    // تفعيل الزر الذي تم الضغط عليه
-                    button.classList.add('active');
-
-                    const category = button.getAttribute('data-category');
-
-                    // إظهار أو إخفاء الأقسام بناءً على الفئة المحددة
-                    productSections.forEach(section => {
-                        if (category === 'all' || section.getAttribute('data-category') === category) {
-                            section.style.display = 'block';  // إظهار القسم
-                        } else {
-                            section.style.display = 'none';  // إخفاء القسم
-                        }
-                    });
-                            AOS.refresh();
-                });
-            });
-
-
-         // كود الكتابة المتكرر
-            const phrases = ["المنتجات", "ELKADY FURNITURES"];
-            let phraseIndex = 0;
-            let letterIndex = 0;
-            const typingSpeed = 150;  // سرعة الكتابة
-            const erasingSpeed = 80;  // سرعة المسح
-            const delayBetweenPhrases = 1200; // تأخير قبل تغيير الجملة
-
-            const typingElement = document.getElementById("typing");
-
-            function type() {
-                if (letterIndex < phrases[phraseIndex].length) {
-                    typingElement.innerHTML += phrases[phraseIndex].charAt(letterIndex);
-                    letterIndex++;
-                    setTimeout(type, typingSpeed);
-                } else {
-                    setTimeout(erase, delayBetweenPhrases);
-                }
-            }
-
-            function erase() {
-                if (letterIndex > 0) {
-                    typingElement.innerHTML = phrases[phraseIndex].substring(0, letterIndex - 1);
-                    letterIndex--;
-                    setTimeout(erase, erasingSpeed);
-                } else {
-                    phraseIndex++;
-                    if (phraseIndex >= phrases.length) phraseIndex = 0;
-                    setTimeout(type, typingSpeed);
-                }
-            }
-
-            window.onload = function () {
+        const type = () => {
+            if (letterIndex < phrases[phraseIndex].length) {
+                typingElement.textContent += phrases[phraseIndex][letterIndex++];
                 setTimeout(type, typingSpeed);
-            };
+            } else {
+                setTimeout(erase, delayBetweenPhrases);
+            }
+        };
+        const erase = () => {
+            if (letterIndex > 0) {
+                typingElement.textContent = phrases[phraseIndex].substring(0, --letterIndex);
+                setTimeout(erase, erasingSpeed);
+            } else {
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                setTimeout(type, typingSpeed);
+            }
+        };
 
-            window.addEventListener('load', function() {
-    const productCards = document.querySelectorAll('.product-card');
-    
-    productCards.forEach(card => {
-        // إنشاء شريط التخفيض
-        const discountBanner = document.createElement('div');
-        discountBanner.className = 'discount-banner';
-        discountBanner.textContent = 'عرض خاص';
+        window.addEventListener("load", () => setTimeout(type, typingSpeed));
+    })();
 
-        // إضافة الشريط بعد الـ class مباشرة
-        card.insertAdjacentElement('afterbegin', discountBanner);
-    });
-});
-
-
-
-
-
-
-    
-//----------------------------------------------------------------------------------//
-  const modal = document.getElementById("productModal");
-    const closeModal = document.querySelector(".close");
-    const mainImage = document.getElementById("mainImage");
-    const gallery = document.getElementById("componentsGallery");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-
-    let currentIndex = 0;
-    let images = [];
-
-    document.querySelectorAll(".product-card").forEach(card => {
-        card.addEventListener("click", () => {
-            const mainImg = card.querySelector("img").src;
-            images = card.dataset.components?.split(",") || [mainImg];
-            currentIndex = 0;
-            updateMainImage();
-
-            gallery.innerHTML = "";
-            images.forEach((src, index) => {
-                const img = document.createElement("img");
-                img.src = src.trim();
-                img.addEventListener("click", () => {
-                    currentIndex = index;
-                    updateMainImage();
-                });
-                gallery.appendChild(img);
-            });
-
-            modal.style.display = "block";
+    /* ============================
+       إضافة بانر تخفيض على كل منتج
+    ============================ */
+    window.addEventListener("load", () => {
+        document.querySelectorAll(".product-card").forEach(card => {
+            const banner = document.createElement("div");
+            banner.className = "discount-banner";
+            banner.textContent = "عرض خاص";
+            card.prepend(banner);
         });
     });
 
-    function updateMainImage() {
-        mainImage.src = images[currentIndex].trim();
-    }
+    /* ============================
+       عرض المنتجات حسب category من الرابط
+    ============================ */
+    document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            const category = params.get("category"); // يجيب القسم من الرابط
+            const sections = document.querySelectorAll(".products-section");
+            let found = false;
 
-    prevBtn.onclick = () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateMainImage();
-    };
+            sections.forEach(section => {
+                const wrapper = section.querySelector(".category-wrapper");
+                const container = section.querySelector(".products");
 
-    nextBtn.onclick = () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateMainImage();
-    };
+                if (category && section.dataset.category === category) {
+                    section.style.display = "block";
+                    if (wrapper) wrapper.style.display = "block";
+                    if (container) container.style.display = "flex";
+                    found = true;
+                } else {
+                    section.style.display = "none";
+                    if (wrapper) wrapper.style.display = "none";
+                }
+            });
 
-    closeModal.onclick = () => {
-        modal.style.display = "none";
-    };
+            // لو مفيش باراميتر أو القسم مش متسجل → اعرض الكل
+            if (!category || !found) {
+                sections.forEach(section => {
+                    section.style.display = "block";
+                    const wrapper = section.querySelector(".category-wrapper");
+                    const container = section.querySelector(".products");
+                    if (wrapper) wrapper.style.display = "block";
+                    if (container) container.style.display = "flex";
+                });
+            }
+        });
 
-    window.onclick = e => {
-        if (e.target === modal) {
-            modal.style.display = "none";
-        }
-    };
 
-    /************************************/
-    function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
 
-        function scrollToBottom() {
-            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-        }
-/**********************************************/
-function filterProductsByPrice(order, category = "all", minPrice = null, maxPrice = null) {
-        const allSections = document.querySelectorAll(".products-section");
-
-        allSections.forEach(section => {
+    /* ============================
+       فلترة المنتجات بالسعر / القسم / الترتيب
+    ============================ */
+    function filterProductsByPrice(order, category = "all", minPrice = null, maxPrice = null) {
+        document.querySelectorAll(".products-section").forEach(section => {
             const categoryName = section.dataset.category;
             const wrapper = section.querySelector(".category-wrapper");
             const container = section.querySelector(".products");
             let products = Array.from(section.querySelectorAll(".product-card"));
 
-            // تصفية المنتجات حسب التصنيف إذا تم اختياره
+            // تصفية بالقسم
             if (category !== "all" && categoryName !== category) {
-                wrapper.style.display = "none";
+                if (wrapper) wrapper.style.display = "none";
                 return;
             }
 
-            // تصفية حسب السعر
+            // تصفية بالسعر
             products = products.filter(product => {
                 const priceText = product.querySelector(".new-price")?.textContent ?? "0";
                 const price = parseFloat(priceText.replace(/[^\d.]/g, ""));
-                if ((minPrice !== null && price < minPrice) || (maxPrice !== null && price > maxPrice)) {
-                    return false;
-                }
-                return true;
+                return !((minPrice && price < minPrice) || (maxPrice && price > maxPrice));
             });
 
-            // الترتيب حسب السعر إذا تم اختياره
+            // ترتيب الأسعار
             if (order === "asc" || order === "desc") {
                 products.sort((a, b) => {
                     const priceA = parseFloat(a.querySelector(".new-price")?.textContent.replace(/[^0-9]/g, "") || 0);
                     const priceB = parseFloat(b.querySelector(".new-price")?.textContent.replace(/[^0-9]/g, "") || 0);
                     return order === "asc" ? priceA - priceB : priceB - priceA;
                 });
-
             }
 
-            // تحديث عرض المنتجات
-            container.innerHTML = "";
-            if (products.length > 0) {
-                products.forEach(product => container.appendChild(product));
-            } else {
-                container.innerHTML = `<p class="no-products-message" style="padding: 10px; color: #888; font-weight: bold;">لا توجد منتجات مطابقة للفلترة</p>`;
+            // تحديث العرض
+            if (container) {
+                container.innerHTML = "";
+                if (products.length > 0) {
+                    products.forEach(p => container.appendChild(p));
+                } else {
+                    container.innerHTML = `<p class="no-products-message">لا توجد منتجات مطابقة</p>`;
+                }
             }
 
-            // إظهار القسم
-            wrapper.style.display = "block";
+            if (wrapper) wrapper.style.display = "block";
         });
     }
 
-    function applyFilter() {
-        const category = document.getElementById("categorySelect").value;
-        const order = document.getElementById("orderSelect").value;
-        const minPriceInput = document.getElementById("minPrice").value.trim();
-        const maxPriceInput = document.getElementById("maxPrice").value.trim();
+    // تطبيق الفلترة تلقائياً عند تغيير أي مدخل
+    document.addEventListener("DOMContentLoaded", () => {
+        const applyFilter = () => {
+            const category = document.getElementById("categorySelect")?.value || "all";
+            const order = document.getElementById("orderSelect")?.value || "asc";
+            const minPrice = parseFloat(document.getElementById("minPrice")?.value) || null;
+            const maxPrice = parseFloat(document.getElementById("maxPrice")?.value) || null;
+            filterProductsByPrice(order, category, minPrice, maxPrice);
+        };
 
-        const minPrice = minPriceInput ? parseFloat(minPriceInput) : null;
-        const maxPrice = maxPriceInput ? parseFloat(maxPriceInput) : null;
-
-        // التحقق من صلاحية الأسعار المدخلة
-        if ((minPrice !== null && isNaN(minPrice)) || (maxPrice !== null && isNaN(maxPrice))) {
-            alert("الرجاء إدخال قيم أسعار صحيحة");
-            return;
-        }
-
-        filterProductsByPrice(order, category, minPrice, maxPrice);
-    }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const categorySelect = document.getElementById("categorySelect");
-            const orderSelect = document.getElementById("orderSelect");
-            const minPriceInput = document.getElementById("minPrice");
-            const maxPriceInput = document.getElementById("maxPrice");
-
-            // عند تغيير أي قيمة، يتم تطبيق الفلترة مباشرة
-            categorySelect.addEventListener("change", applyFilter);
-            orderSelect.addEventListener("change", applyFilter);
-            minPriceInput.addEventListener("input", applyFilter);
-            maxPriceInput.addEventListener("input", applyFilter);
+        ["categorySelect", "orderSelect", "minPrice", "maxPrice"].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener("input", applyFilter);
         });
-    </script>
+    });
+
+    /* ============================
+       مودال عرض صور المنتج (Product Gallery Modal)
+    ============================ */
+    (() => {
+        const modal = document.getElementById("productModal"),
+            closeModal = document.querySelector(".close"),
+            mainImage = document.getElementById("mainImage"),
+            gallery = document.getElementById("componentsGallery"),
+            prevBtn = document.getElementById("prevBtn"),
+            nextBtn = document.getElementById("nextBtn");
+
+        let currentIndex = 0, images = [];
+
+        const updateMainImage = () => { if (images.length) mainImage.src = images[currentIndex].trim(); };
+
+        document.querySelectorAll(".product-card").forEach(card => {
+            card.addEventListener("click", () => {
+                const mainImg = card.querySelector("img").src;
+                images = card.dataset.components?.split(",") || [mainImg];
+                currentIndex = 0;
+                updateMainImage();
+
+                gallery.innerHTML = "";
+                images.forEach((src, i) => {
+                    const img = document.createElement("img");
+                    img.src = src.trim();
+                    img.addEventListener("click", () => { currentIndex = i; updateMainImage(); });
+                    gallery.appendChild(img);
+                });
+
+                modal.style.display = "block";
+            });
+        });
+
+        prevBtn.onclick = () => { currentIndex = (currentIndex - 1 + images.length) % images.length; updateMainImage(); };
+        nextBtn.onclick = () => { currentIndex = (currentIndex + 1) % images.length; updateMainImage(); };
+        closeModal.onclick = () => modal.style.display = "none";
+        window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
+    })();
+
+    /* ============================
+       زر الصعود والنزول
+    ============================ */
+    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    function scrollToBottom() { window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }); }
+</script>
+
 
 </body>
 
